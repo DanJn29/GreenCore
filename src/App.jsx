@@ -1,6 +1,6 @@
 const navItems = [
   { href: "#about", label: "Մեր մասին" },
-  { href: "#products", label: "Արտադրանք", active: true },
+  { href: "#products", label: "Արտադրանք" },
   { href: "#process", label: "Գործընթաց" },
   { href: "#tourism", label: "Տուրիզմ" },
   { href: "#why-choose", label: "Ինչու՞ ընտրել մեզ" },
@@ -248,7 +248,7 @@ export default function App() {
           </div>
 
           <div className="split split--reversed">
-            <div className="media-card media-card--large">
+            <div className="media-card media-card--large media-card--fig-box">
               <img src="/assets/photos/about-fig-box.jpg" alt="Թուզի ընտրանի" />
             </div>
 

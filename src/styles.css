@@ -68,7 +68,7 @@ button {
   color: var(--color-cream-soft);
   background:
     linear-gradient(rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.34)),
-    url("/assets/photos/hero-orchard.png") center/cover no-repeat;
+    url("/assets/photos/hero-orchard.png") center top/cover no-repeat;
 }
 
 .hero__shell {
@@ -114,14 +114,21 @@ button {
   font-family: "Noto Sans Armenian", sans-serif;
   font-size: 13px;
   line-height: 1.2;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    padding 160ms ease;
   white-space: nowrap;
 }
 
-.nav-pill__link.is-active {
+.nav-pill__link.is-active,
+.nav-pill__link:hover,
+.nav-pill__link:focus-visible {
   padding: 10px 16px;
   background: var(--color-cream-soft);
   color: var(--color-green);
   font-weight: 700;
+  outline: none;
 }
 
 .lang-badge {
@@ -262,6 +269,10 @@ button {
   margin-top: 20px;
 }
 
+.split--reversed {
+  gap: 12px;
+}
+
 .split--framed .copy-block {
   display: flex;
   min-height: 480px;
@@ -284,8 +295,14 @@ button {
   display: flex;
   min-height: 480px;
   align-items: flex-end;
-  padding: 20px 0 20px 8px;
+  padding: 20px 0 20px 28px;
   border-top: 1px solid rgba(249, 250, 244, 0.45);
+  border-bottom: 0;
+}
+
+.copy-block--bordered .copy {
+  width: 100%;
+  padding-bottom: 20px;
   border-bottom: 1px solid rgba(249, 250, 244, 0.45);
 }
 
@@ -334,6 +351,16 @@ button {
 
 .media-card--large {
   min-height: 480px;
+}
+
+.media-card--fig-box img {
+  transform: none;
+  transform-origin: center;
+}
+
+.media-card--fig-box {
+  width: min(100%, 680px);
+  justify-self: end;
 }
 
 .products {
@@ -683,6 +710,10 @@ button {
     min-height: 440px;
   }
 
+  .media-card--fig-box {
+    width: min(100%, 620px);
+  }
+
   .product-card {
     min-height: 210px;
   }
@@ -759,6 +790,10 @@ button {
   .tourism__image,
   .process-row__image {
     min-height: auto;
+  }
+
+  .media-card--fig-box {
+    width: 100%;
   }
 
   .process-row--reverse .process-row__copy,

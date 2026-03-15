@@ -1,19 +1,277 @@
-const navItems = [
-  { href: "#about", label: "Մեր մասին" },
-  { href: "#products", label: "Արտադրանք" },
-  { href: "#process", label: "Գործընթաց" },
-  { href: "#tourism", label: "Տուրիզմ" },
-  { href: "#why-choose", label: "Ինչու՞ ընտրել մեզ" },
-];
+import React from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
+const translations = {
+  AM: {
+    navItems: [
+      { href: "#about", label: "Մեր մասին" },
+      { href: "#products", label: "Արտադրանք" },
+      { href: "#process", label: "Գործընթաց" },
+      { href: "#tourism", label: "Տուրիզմ" },
+      { href: "#why-choose", label: "Ինչու՞ ընտրել մեզ" },
+    ],
+    hero: {
+      title: "Նորարարությունն ու բնությունը՝ մեկ այգում",
+      lead: "Ընտանեկան բիզնես, որը միավորում է ավանդական արժեքներն ու ժամանակակից գյուղատնտեսական լուծումները՝ ապահովելով բարձրորակ օրգանիկ թուզ ներքին շուկայի և արտահանման համար։",
+      cta1: "Դառնալ գործընկեր",
+      cta2: "Ամրագրել այց",
+    },
+    about: {
+      title: "Մեր մասին",
+      headline: "Մեր արմատները բնության մեջ են, մեր ընթացքը՝ տեխնոլոգիայի։",
+      text1: "Մենք վերափոխում ենք հողատարածքը ժամանակակից, բարձր տեխնոլոգիական այգու, որտեղ յուրաքանչյուր ծառ խնամվում է ընտանեկան հոգատարությամբ։ Մեր նպատակն է ստեղծել էկոլոգիապես մաքուր միջավայր և աճեցնել լավագույն որակի թուզ, որը կներկայացնի մեր երկրի համն ու հոտը միջազգային շուկայում։",
+      text2: "Այն ամենը, ինչ դուք տեսնում եք՝ փարթամ կանաչ դաշտերից մինչև նորարարական գյուղատնտեսական տեխնիկաներ, պարզապես հնարավորությունների օրինակ է։ Մենք հավատում ենք, որ գյուղատնտեսությունը սերմից շատ ավելին է։ Այն հոգատարություն է, կայունություն և պատասխանատվություն ապագայի հանդեպ։",
+    },
+    products: {
+      title: "Արտադրանք",
+      cards: [
+        { title: "Թարմ թուզ", description: "Օրգանիկ, էկոլոգիապես մաքուր բերք՝ իդեալական սուպերմարկետների և ռեստորանային ցանցերի համար:" },
+        { title: "Արտահանում", description: "Միջազգային (ԵԱՏՄ, ԵՄ) ստանդարտներին համապատասխանող փաթեթավորում և որակի հավաստագրում:" },
+        { title: "Մեծածախ մատակարարում", description: "Ճկուն պայմաններ ներքին շուկայի գործընկերների համար:" },
+      ],
+    },
+    process: {
+      title: "Գործընթաց",
+      steps: [
+        {
+          title: "1․ Ձմեռային շրջան (հունվար–փետրվար)",
+          bullets: ["Սանիտարական և ձևավորող էտ", "Վնասված և հին ճյուղերի հեռացում", "Կանխարգելիչ պաշտպանություն", "Կաթիլային ոռոգման համակարգի ստուգում"],
+        },
+        {
+          title: "2․ Վեգետացիայի սկիզբ (մարտ–ապրիլ)",
+          bullets: ["Սեզոնային սնուցման ապահովում", "Կանոնավոր ոռոգման մեկնարկ", "Հողի վիճակի վերահսկում", "Նոր աճի և տերևային զանգվածի վերահսկում"],
+        },
+        {
+          title: "3․ Պտղի ձևավորում (մայիս–հունիս)",
+          bullets: ["Կայուն ջրային ռեժիմի պահպանում", "Ծառի բեռնվածության վերահսկում", "Պտղի զարգացման դիտարկում", "Դաշտային որակի վերահսկում"],
+        },
+        {
+          title: "4․ Հասունացում և բերքահավաք (հուլիս–սեպտեմբեր)",
+          bullets: ["Օպտիմալ հասունության որոշում", "Ձեռքով բերքահավաք", "Բերքահավաք յուրաքանչյուր 2–3 օրը մեկ ակտիվ փուլում", "Զգույշ տեղափոխում դաշտից"],
+        },
+        {
+          title: "5․ Հետբերքահավաքային մշակում",
+          bullets: ["Նախնական տեսակավորում", "Որակի և չափի ընտրություն", "Նախնական սառեցում", "Պատրաստում փաթեթավորման"],
+        },
+        {
+          title: "6․ Փաթեթավորում",
+          bullets: ["Չափերի կալիբրացում", "Օդափոխվող տարաների օգտագործում", "Խմբաքանակի և հավաքման ամսաթվի մակնշում"],
+        },
+        {
+          title: "7․ Լոգիստիկա",
+          bullets: ["Ջերմաստիճանային ռեժիմի պահպանում", "Սառը շղթայի ապահովում", "Օպերատիվ առաքում թարմ շուկա"],
+        },
+      ],
+    },
+    tourism: {
+      title: "Զբոսաշրջություն",
+      headline: "Հրավիրում ենք բացահայտելու մեր խելացի այգիները։",
+      servicesTitle: "Առաջարկվող ծառայություններ",
+      services: ["1․ Շրջայց նորագույն տեխնոլոգիաներով հագեցած այգում:", "2․ Թարմ բերքի և թզից պատրաստված մթերքների համտես:", "3․ Գնումներ անմիջապես արտադրողից:"],
+      cta: "Ամրագրել այց",
+    },
+    whyChoose: {
+      title: "Ինչու ՞ ընտրել մեզ",
+      cards: [
+        { title: "100% Օրգանիկ", description: "Միջազգային չափանիշներին համապատասխանող մաքրություն։" },
+        { title: "Նորարարություն", description: "Կայուն և կանխատեսելի որակ՝ շնորհիվ AgTech (ագրոտեխ) լուծումների։" },
+        { title: "Վստահելիեւթյուն", description: "Ընտանեկան բիզնեսի նվիրվածություն և բիզնես-պրոցեսների թափանցիկություն։" },
+        { title: "Գլոբալ հասանելիություն", description: "Պատրաստ ենք արտահանման ցանկացած ծավալի պահանջարկի:" },
+      ],
+      summary: "Էկոլոգիական պատասխանատվություն, նորարարական մտածելակերպ ևվ երկարաժամկետ, փոխշահավետ Համագործակցություն:",
+      cta: "Դառնալ գործընկեր",
+    },
+    footer: {
+      contactTitle: "Կապ",
+      sectionsTitle: "Բաժիններ",
+      mediaTitle: "Մեդիա",
+      sections: ["Մեր մասին", "Արտադրանք", "Գործընթաց", "Տուրիզմ", "Ինչու՞ ընտրել մեզ"],
+    },
+  },
+  EN: {
+    navItems: [
+      { href: "#about", label: "About" },
+      { href: "#products", label: "Products" },
+      { href: "#process", label: "Process" },
+      { href: "#tourism", label: "Tourism" },
+      { href: "#why-choose", label: "Why Choose Us" },
+    ],
+    hero: {
+      title: "Innovation and nature in one garden",
+      lead: "A family business that combines traditional values and modern agricultural solutions, ensuring high-quality organic figs for the domestic market and for export.",
+      cta1: "Become a Partner",
+      cta2: "Book a Visit",
+    },
+    about: {
+      title: "About",
+      headline: "Our roots are in nature, our path is in technology.",
+      text1: "We are transforming the land into a modern, high-tech garden where each tree is cared for with family-like attention. Our goal is to create an ecologically clean environment and grow the best quality figs that will represent the flavor and aroma of our country in the international market.",
+      text2: "Everything you see, from the lush green fields to innovative agricultural techniques, is just an example of possibilities. We believe that agriculture is much more than a seed. It is care, sustainability, and responsibility towards the future.",
+    },
+    products: {
+      title: "Products",
+      cards: [
+        { title: "Fresh Figs", description: "Organic, ecologically clean harvest, ideal for supermarkets and restaurant chains." },
+        { title: "Export", description: "Packaging and quality certification meeting international (EAEU, EU) standards." },
+        { title: "Wholesale Supply", description: "Flexible terms for partners in the domestic market." },
+      ],
+    },
+    process: {
+      title: "Process",
+      steps: [
+        {
+          title: "1. Winter Period (January–February)",
+          bullets: ["Sanitary and shaping pruning", "Removal of damaged and old branches", "Preventive protection", "Inspection of the drip irrigation system"],
+        },
+        {
+          title: "2. Beginning of Vegetation (March–April)",
+          bullets: ["Ensuring seasonal nutrition", "Start of regular irrigation", "Soil condition monitoring", "Monitoring of new growth and leaf mass"],
+        },
+        {
+          title: "3. Fruit Formation (May–June)",
+          bullets: ["Maintaining a stable water regime", "Monitoring tree load", "Observing fruit development", "Field quality control"],
+        },
+        {
+          title: "4. Ripening and Harvesting (July–September)",
+          bullets: ["Determining optimal ripeness", "Manual harvesting", "Harvesting every 2-3 days during the active phase", "Careful transport from the field"],
+        },
+        {
+          title: "5. Post-Harvest Handling",
+          bullets: ["Initial sorting", "Quality and size selection", "Pre-cooling", "Preparation for packaging"],
+        },
+        {
+          title: "6. Packaging",
+          bullets: ["Size calibration", "Use of ventilated containers", "Labeling with batch and harvest date"],
+        },
+        {
+          title: "7. Logistics",
+          bullets: ["Maintaining temperature regime", "Ensuring cold chain", "Prompt delivery to the fresh market"],
+        },
+      ],
+    },
+    tourism: {
+      title: "Tourism",
+      headline: "We invite you to discover our smart gardens.",
+      servicesTitle: "Services offered",
+      services: ["1. Tour of the garden equipped with the latest technology.", "2. Tasting of fresh harvest and fig-based products.", "3. Purchasing directly from the producer."],
+      cta: "Book a Visit",
+    },
+    whyChoose: {
+      title: "Why Choose Us",
+      cards: [
+        { title: "100% Organic", description: "Purity meeting international standards." },
+        { title: "Innovation", description: "Consistent and predictable quality thanks to AgTech solutions." },
+        { title: "Trust", description: "Dedication of a family business and transparency of business processes." },
+        { title: "Global Accessibility", description: "Ready for export for any volume of demand." },
+      ],
+      summary: "Ecological responsibility, innovative mindset, and long-term, mutually beneficial cooperation.",
+      cta: "Become a Partner",
+    },
+    footer: {
+      contactTitle: "Contact",
+      sectionsTitle: "Sections",
+      mediaTitle: "Media",
+      sections: ["About", "Products", "Process", "Tourism", "Why Choose Us"],
+    },
+  },
+  RU: {
+    navItems: [
+      { href: "#about", label: "О нас" },
+      { href: "#products", label: "Продукция" },
+      { href: "#process", label: "Процесс" },
+      { href: "#tourism", label: "Туризм" },
+      { href: "#why-choose", label: "Почему мы" },
+    ],
+    hero: {
+      title: "Инновации и природа в одном саду",
+      lead: "Семейный бизнес, объединяющий традиционные ценности и современные агротехнические решения, обеспечивающий высококачественный органический инжир для внутреннего рынка и на экспорт.",
+      cta1: "Стать партнёром",
+      cta2: "Забронировать визит",
+    },
+    about: {
+      title: "О нас",
+      headline: "Наши корни – в природе, наш путь – в технологиях.",
+      text1: "Мы преобразуем землю в современный, высокотехнологичный сад, где за каждым деревом ухаживают с семейной заботой. Наша цель – создать экологически чистую среду и вырастить инжир наилучшего качества, который представит вкус и аромат нашей страны на международном рынке.",
+      text2: "Все, что вы видите – от пышных зеленых полей до инновационных агротехник, – это лишь пример возможностей. Мы верим, что сельское хозяйство – это нечто гораздо большее, чем просто семя. Это – забота, устойчивость и ответственность перед будущим.",
+    },
+    products: {
+      title: "Продукция",
+      cards: [
+        { title: "Свежий инжир", description: "Органический, экологически чистый урожай, идеально подходящий для супермаркетов и ресторанных сетей." },
+        { title: "Экспорт", description: "Упаковка и сертификация качества, соответствующие международным стандартам (ЕАЭС, ЕС)." },
+        { title: "Оптовые поставки", description: "Гибкие условия для партнеров на внутреннем рынке." },
+      ],
+    },
+    process: {
+      title: "Процесс",
+      steps: [
+        {
+          title: "1. Зимний период (январь – февраль)",
+          bullets: ["Санитарная и формирующая обрезка", "Удаление поврежденных и старых ветвей", "Профилактическая защита", "Проверка системы капельного орошения"],
+        },
+        {
+          title: "2. Начало вегетации (март – апрель)",
+          bullets: ["Обеспечение сезонного питания", "Начало регулярного полива", "Контроль состояния почвы", "Мониторинг нового прироста и листовой массы"],
+        },
+        {
+          title: "3. Формирование плодов (май – июнь)",
+          bullets: ["Поддержание стабильного водного режима", "Контроль нагрузки на дерево", "Наблюдение за развитием плодов", "Полевой контроль качества"],
+        },
+        {
+          title: "4. Созревание и сбор урожая (июль – сентябрь)",
+          bullets: ["Определение оптимальной спелости", "Ручной сбор урожая", "Сбор урожая каждые 2-3 дня в активную фазу", "Аккуратная транспортировка с поля"],
+        },
+        {
+          title: "5. Послеуборочная обработка",
+          bullets: ["Предварительная сортировка", "Отбор по качеству и размеру", "Предварительное охлаждение", "Подготовка к упаковке"],
+        },
+        {
+          title: "6. Упаковка",
+          bullets: ["Калибровка по размерам", "Использование вентилируемых контейнеров", "Маркировка с указанием партии и даты сбора"],
+        },
+        {
+          title: "7. Логистика",
+          bullets: ["Поддержание температурного режима", "Обеспечение холодовой цепи", "Оперативная доставка на свежий рынок"],
+        },
+      ],
+    },
+    tourism: {
+      title: "Туризм",
+      headline: "Приглашаем вас открыть для себя наши умные сады.",
+      servicesTitle: "Предлагаемые услуги",
+      services: ["1. Экскурсия по саду, оснащенному новейшими технологиями.", "2. Дегустация свежего урожая и продуктов из инжира.", "3. Покупки напрямую у производителя."],
+      cta: "Забронировать визит",
+    },
+    whyChoose: {
+      title: "Почему выбирают нас",
+      cards: [
+        { title: "100% Органика", description: "Чистота, соответствующая международным стандартам." },
+        { title: "Инновации", description: "Стабильное и предсказуемое качество благодаря AgTech-решениям." },
+        { title: "Надежность", description: "Преданность семейного бизнеса и прозрачность бизнес-процессов." },
+        { title: "Глобальная доступность", description: "Готовы к экспорту на любой объем спроса." },
+      ],
+      summary: "Экологическая ответственность, инновационное мышление и долгосрочное, взаимовыгодное сотрудничество.",
+      cta: "Стать партнёром",
+    },
+    footer: {
+      contactTitle: "Контакт",
+      sectionsTitle: "Разделы",
+      mediaTitle: "Медиа",
+      sections: ["О нас", "Продукция", "Процесс", "Туризм", "Почему мы"],
+    },
+  },
+};
+
+const navItems = translations.AM.navItems;
 const partners = [
-  { src: "/assets/brand/partner-1.svg", alt: "Partner logo" },
-  { src: "/assets/brand/lidl.svg", alt: "Lidl" },
-  { src: "/assets/brand/edeka.svg", alt: "Edeka" },
-  { src: "/assets/brand/billa.svg", alt: "Billa" },
-  { src: "/assets/brand/partner-5.svg", alt: "Partner logo" },
-  { src: "/assets/brand/spar.svg", alt: "Spar" },
-  { src: "/assets/brand/spayka.svg", alt: "Spayka" },
+  { src: "/assets/brand/Frame.svg", alt: "Partner logo" },
+  { src: "/assets/brand/lidl2.svg", alt: "Lidl" },
+  { src: "/assets/brand/edeka1.svg", alt: "Edeka" },
+  { src: "/assets/brand/billa-seeklogo1.svg", alt: "Billa" },
+  { src: "/assets/brand/Frame-1.svg", alt: "Partner logo" },
+  { src: "/assets/brand/spar-1.svg", alt: "Spar" },
+  { src: "/assets/brand/Spayka_ideVadFEMu_1.svg", alt: "Spayka" },
 ];
 
 const productCards = [
@@ -24,10 +282,7 @@ const productCards = [
   },
   {
     type: "feature",
-    icon: "/assets/icons/fresh-fig.svg",
-    title: "Թարմ թուզ",
-    description:
-      "Օրգանիկ, էկոլոգիապես մաքուր բերք՝ իդեալական սուպերմարկետների և ռեստորանային ցանցերի համար:",
+    icon: "/assets/icons/fig.svg",
   },
   {
     type: "image",
@@ -37,9 +292,6 @@ const productCards = [
   {
     type: "feature",
     icon: "/assets/icons/export.svg",
-    title: "Արտահանում",
-    description:
-      "Միջազգային (ԵԱՏՄ, ԵՄ) ստանդարտներին համապատասխանող փաթեթավորում և որակի հավաստագրում:",
   },
   {
     type: "image",
@@ -48,130 +300,94 @@ const productCards = [
   },
   {
     type: "feature",
-    icon: "/assets/icons/wholesale.svg",
-    title: "Մեծածախ մատակարարում",
-    description: "Ճկուն պայմաններ ներքին շուկայի գործընկերների համար:",
+    icon: "/assets/icons/supply.svg",
   },
 ];
 
 const processSteps = [
   {
-    title: "1․ Ձմեռային շրջան (հունվար–փետրվար)",
-    bullets: [
-      "Սանիտարական և ձևավորող էտ",
-      "Վնասված և հին ճյուղերի հեռացում",
-      "Կանխարգելիչ պաշտպանություն",
-      "Կաթիլային ոռոգման համակարգի ստուգում",
-    ],
     image: "/assets/photos/process-winter-pruning.png",
     reverse: false,
   },
   {
-    title: "2․ Վեգետացիայի սկիզբ (մարտ–ապրիլ)",
-    bullets: [
-      "Սեզոնային սնուցման ապահովում",
-      "Կանոնավոր ոռոգման մեկնարկ",
-      "Հողի վիճակի վերահսկում",
-      "Նոր աճի և տերևային զանգվածի վերահսկում",
-    ],
     image: "/assets/photos/process-spring-growth.png",
     reverse: true,
   },
   {
-    title: "3․ Պտղի ձևավորում (մայիս–հունիս)",
-    bullets: [
-      "Կայուն ջրային ռեժիմի պահպանում",
-      "Ծառի բեռնվածության վերահսկում",
-      "Պտղի զարգացման դիտարկում",
-      "Դաշտային որակի վերահսկում",
-    ],
     image: "/assets/photos/process-fruit-formation.png",
     reverse: false,
   },
   {
-    title: "4․ Հասունացում և բերքահավաք (հուլիս–սեպտեմբեր)",
-    bullets: [
-      "Օպտիմալ հասունության որոշում",
-      "Ձեռքով բերքահավաք",
-      "Բերքահավաք յուրաքանչյուր 2–3 օրը մեկ ակտիվ փուլում",
-      "Զգույշ տեղափոխում դաշտից",
-    ],
     image: "/assets/photos/process-harvest.png",
     reverse: true,
   },
   {
-    title: "5․ Հետբերքահավաքային մշակում",
-    bullets: [
-      "Նախնական տեսակավորում",
-      "Որակի և չափի ընտրություն",
-      "Նախնական սառեցում",
-      "Պատրաստում փաթեթավորման",
-    ],
     image: "/assets/photos/process-postharvest.png",
     reverse: false,
   },
   {
-    title: "6․ Փաթեթավորում",
-    bullets: [
-      "Չափերի կալիբրացում",
-      "Օդափոխվող տարաների օգտագործում",
-      "Խմբաքանակի և հավաքման ամսաթվի մակնշում",
-    ],
     image: "/assets/photos/process-packaging.png",
     reverse: true,
   },
   {
-    title: "7․ Լոգիստիկա",
-    bullets: [
-      "Ջերմաստիճանային ռեժիմի պահպանում",
-      "Սառը շղթայի ապահովում",
-      "Օպերատիվ առաքում թարմ շուկա",
-    ],
     image: "/assets/photos/process-logistics.png",
     reverse: false,
   },
 ];
 
-const tourismServices = [
-  "1․ Շրջայց նորագույն տեխնոլոգիաներով հագեցած այգում:",
-  "2․ Թարմ բերքի և թզից պատրաստված մթերքների համտես:",
-  "3․ Գնումներ անմիջապես արտադրողից:",
-];
-
 const whyChooseCards = [
   {
-    title: "100% Օրգանիկ",
-    description: "Միջազգային չափանիշներին համապատասխանող մաքրություն։",
     image: "/assets/photos/why-organic.jpg",
   },
   {
-    title: "Նորարարություն",
-    description: "Կայուն և կանխատեսելի որակ՝ շնորհիվ AgTech (ագրոտեխ) լուծումների։",
     image: "/assets/photos/why-innovation.jpg",
     offset: true,
   },
   {
-    title: "Վստահելիեւթյուն",
-    description: "Ընտանեկան բիզնեսի նվիրվածություն և բիզնես-պրոցեսների թափանցիկություն։",
     image: "/assets/photos/why-trust.jpg",
   },
   {
-    title: "Գլոբալ հասանելիություն",
-    description: "Պատրաստ ենք արտահանման ցանկացած ծավալի պահանջարկի:",
     image: "/assets/photos/why-global.jpg",
     offset: true,
   },
 ];
 
-const footerLinks = [
-  "Մեր մասին",
-  "Արտադրանք",
-  "Գործընթաց",
-  "Տուրիզմ",
-  "Ինչու՞ ընտրել մեզ",
-];
-
 export default function App() {
+  const [currentLanguage, setCurrentLanguage] = React.useState("AM");
+  const [showDatePicker, setShowDatePicker] = React.useState(false);
+  const [selectedDate, setSelectedDate] = React.useState(null);
+  const [visitorName, setVisitorName] = React.useState("");
+  const [visitorPhone, setVisitorPhone] = React.useState("");
+
+  const languages = [
+    { code: "AM", label: "Armenian" },
+    { code: "EN", label: "English" },
+    { code: "RU", label: "Русский" },
+  ];
+
+  const t = translations[currentLanguage];
+  const navItemsTranslated = t.navItems;
+
+  const handleLanguageSelect = (code) => {
+    setCurrentLanguage(code);
+  };
+
+  const handleBookVisit = () => {
+    setShowDatePicker(true);
+  };
+
+  const handleDateSelect = (date) => {
+    if (date) {
+      setSelectedDate(date);
+      console.log("Selected date:", date);
+      setShowDatePicker(false);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setShowDatePicker(false);
+  };
+
   return (
     <div className="page">
       <header className="hero" id="top">
@@ -182,7 +398,7 @@ export default function App() {
             </a>
 
             <nav className="nav-pill" aria-label="Primary navigation">
-              {navItems.map((item) => (
+              {navItemsTranslated.map((item) => (
                 <a
                   key={item.label}
                   className={`nav-pill__link ${item.active ? "is-active" : ""}`}
@@ -193,24 +409,40 @@ export default function App() {
               ))}
             </nav>
 
-            <button className="lang-badge" type="button">
-              AM
-            </button>
+            <div className="lang-dropdown">
+              <button 
+                className="lang-badge" 
+                type="button"
+                aria-haspopup="true"
+              >
+                {currentLanguage}
+                {/* <span className="lang-dropdown__arrow">▼</span> */}
+              </button>
+              <ul className="lang-dropdown__menu">
+                {languages.map((lang) => (
+                  <li key={lang.code}>
+                    <button
+                      className={`lang-dropdown__item ${currentLanguage === lang.code ? "is-active" : ""}`}
+                      onClick={() => handleLanguageSelect(lang.code)}
+                      type="button"
+                    >
+                      {lang.code}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <div className="hero__content">
-            <h1 className="hero__title">Նորարարությունն ու բնությունը՝ մեկ այգում</h1>
-            <p className="hero__lead">
-              Ընտանեկան բիզնես, որը միավորում է ավանդական արժեքներն ու ժամանակակից
-              գյուղատնտեսական լուծումները՝ ապահովելով բարձրորակ օրգանիկ թուզ ներքին
-              շուկայի և արտահանման համար։
-            </p>
+            <h1 className="hero__title">{t.hero.title}</h1>
+            <p className="hero__lead">{t.hero.lead}</p>
             <div className="hero__actions">
               <a className="button button--solid" href="#contact">
-                Դառնալ գործընկեր
+                {t.hero.cta1}
               </a>
-              <a className="button button--ghost" href="#tourism">
-                Ամրագրել այց
+              <a className="button button--ghost" href="#" onClick={(e) => { e.preventDefault(); handleBookVisit(); }}>
+                {t.hero.cta2}
               </a>
             </div>
           </div>
@@ -219,27 +451,22 @@ export default function App() {
 
       <section className="section section--green about" id="about">
         <div className="shell shell--wide">
-          <div className="partner-strip" aria-label="Retail partners">
-            {partners.map((partner) => (
-              <div className="partner-strip__item" key={partner.src}>
-                <img src={partner.src} alt={partner.alt} />
-              </div>
-            ))}
+          <div className="partner-strip-wrapper" aria-label="Retail partners">
+            <div className="partner-strip">
+              {[...partners, ...partners].map((partner, index) => (
+                <div className="partner-strip__item" key={`${partner.src}-${index}`}>
+                  <img src={partner.src} alt={partner.alt} />
+                </div>
+              ))}
+            </div>
           </div>
 
-          <p className="section-title section-title--light">Մեր մասին</p>
+          <p className="section-title section-title--light">{t.about.title}</p>
 
           <div className="split split--framed">
             <div className="copy-block">
-              <h2 className="headline headline--light">
-                Մեր արմատները բնության մեջ են, մեր ընթացքը՝ տեխնոլոգիայի։
-              </h2>
-              <p className="copy copy--light">
-                Մենք վերափոխում ենք հողատարածքը ժամանակակից, բարձր տեխնոլոգիական այգու,
-                որտեղ յուրաքանչյուր ծառ խնամվում է ընտանեկան հոգատարությամբ։ Մեր նպատակն
-                է ստեղծել էկոլոգիապես մաքուր միջավայր և աճեցնել լավագույն որակի թուզ,
-                որը կներկայացնի մեր երկրի համն ու հոտը միջազգային շուկայում։
-              </p>
+              <h2 className="headline headline--light">{t.about.headline}</h2>
+              <p className="copy copy--light">{t.about.text1}</p>
             </div>
 
             <div className="media-card media-card--large">
@@ -253,12 +480,7 @@ export default function App() {
             </div>
 
             <div className="copy-block copy-block--bordered">
-              <p className="copy copy--light">
-                Այն ամենը, ինչ դուք տեսնում եք՝ փարթամ կանաչ դաշտերից մինչև նորարարական
-                գյուղատնտեսական տեխնիկաներ, պարզապես հնարավորությունների օրինակ է։
-                Մենք հավատում ենք, որ գյուղատնտեսությունը սերմից շատ ավելին է։ Այն
-                հոգատարություն է, կայունություն և պատասխանատվություն ապագայի հանդեպ։
-              </p>
+              <p className="copy copy--light">{t.about.text2}</p>
             </div>
           </div>
         </div>
@@ -266,19 +488,19 @@ export default function App() {
 
       <section className="section products" id="products">
         <div className="shell shell--wide">
-          <p className="section-title">Արտադրանք</p>
+          <p className="section-title">{t.products.title}</p>
 
           <div className="product-grid">
-            {productCards.map((card) =>
+            {productCards.map((card, index) =>
               card.type === "image" ? (
                 <article className="product-card product-card--image" key={card.image}>
                   <img src={card.image} alt={card.alt} />
                 </article>
               ) : (
-                <article className="product-card product-card--feature" key={card.title}>
+                <article className="product-card product-card--feature" key={`feature-${index}`}>
                   <img className="product-card__icon" src={card.icon} alt="" aria-hidden="true" />
-                  <h3 className="product-card__title">{card.title}</h3>
-                  <p className="product-card__text">{card.description}</p>
+                  <h3 className="product-card__title">{t.products.cards[Math.floor(index / 2)].title}</h3>
+                  <p className="product-card__text">{t.products.cards[Math.floor(index / 2)].description}</p>
                 </article>
               ),
             )}
@@ -288,25 +510,25 @@ export default function App() {
 
       <section className="section process" id="process">
         <div className="shell shell--wide">
-          <p className="section-title">Գործընթաց</p>
+          <p className="section-title">{t.process.title}</p>
 
           <div className="process-list">
-            {processSteps.map((step) => (
+            {processSteps.map((step, index) => (
               <article
                 className={`process-row ${step.reverse ? "process-row--reverse" : ""}`}
-                key={step.title}
+                key={`process-${index}`}
               >
                 <div className="process-row__copy">
-                  <h3 className="process-row__title">{step.title}</h3>
+                  <h3 className="process-row__title">{t.process.steps[index].title}</h3>
                   <ul className="process-row__bullets">
-                    {step.bullets.map((bullet) => (
+                    {t.process.steps[index].bullets.map((bullet) => (
                       <li key={bullet}>{bullet}</li>
                     ))}
                   </ul>
                 </div>
 
                 <div className="process-row__image">
-                  <img src={step.image} alt={step.title} />
+                  <img src={step.image} alt={t.process.steps[index].title} />
                 </div>
               </article>
             ))}
@@ -316,10 +538,8 @@ export default function App() {
 
       <section className="section tourism" id="tourism">
         <div className="shell shell--wide">
-          <p className="section-title">Զբոսաշրջություն</p>
-          <h2 className="headline tourism__headline">
-            Հրավիրում ենք բացահայտելու մեր խելացի այգիները։
-          </h2>
+          <p className="section-title">{t.tourism.title}</p>
+          <h2 className="headline tourism__headline">{t.tourism.headline}</h2>
 
           <div className="tourism__grid">
             <div className="tourism__image">
@@ -327,15 +547,15 @@ export default function App() {
             </div>
 
             <div className="tourism__panel">
-              <h3 className="tourism__title">Առաջարկվող ծառայություններ</h3>
+              <h3 className="tourism__title">{t.tourism.servicesTitle}</h3>
               <ul className="tourism__services">
-                {tourismServices.map((service) => (
+                {t.tourism.services.map((service) => (
                   <li key={service}>{service}</li>
                 ))}
               </ul>
 
-              <a className="button button--ghost tourism__cta" href="#contact">
-                Ամրագրել այց
+              <a className="button button--ghost tourism__cta" href="#" onClick={(e) => { e.preventDefault(); handleBookVisit(); }}>
+                {t.tourism.cta}
               </a>
             </div>
           </div>
@@ -344,31 +564,28 @@ export default function App() {
 
       <section className="section why-choose" id="why-choose">
         <div className="shell shell--wide">
-          <p className="section-title section-title--left">Ինչու ՞ ընտրել մեզ</p>
+          <p className="section-title section-title--left">{t.whyChoose.title}</p>
 
           <div className="why-grid">
-            {whyChooseCards.map((card) => (
+            {whyChooseCards.map((card, index) => (
               <article
                 className={`why-card ${card.offset ? "why-card--offset" : ""}`}
-                key={card.title}
+                key={`why-${index}`}
               >
-                <img className="why-card__image" src={card.image} alt={card.title} />
+                <img className="why-card__image" src={card.image} alt={t.whyChoose.cards[index].title} />
                 <div className="why-card__overlay">
-                  <h3 className="why-card__title">{card.title}</h3>
-                  <p className="why-card__text">{card.description}</p>
+                  <h3 className="why-card__title">{t.whyChoose.cards[index].title}</h3>
+                  <p className="why-card__text">{t.whyChoose.cards[index].description}</p>
                 </div>
               </article>
             ))}
           </div>
 
           <div className="why-choose__summary">
-            <h2 className="headline headline--compact">
-              Էկոլոգիական պատասխանատվություն, նորարարական մտածելակերպ ևվ երկարաժամկետ,
-              փոխշահավետ Համագործակցություն:
-            </h2>
+            <h2 className="headline headline--compact">{t.whyChoose.summary}</h2>
 
             <a className="button button--solid" href="#contact">
-              Դառնալ գործընկեր
+              {t.whyChoose.cta}
             </a>
           </div>
         </div>
@@ -377,14 +594,32 @@ export default function App() {
       <footer className="footer" id="contact">
         <div className="shell footer__shell">
           <div className="footer__languages" aria-label="Languages">
-            <span className="is-muted">EN</span>
-            <span>AM</span>
-            <span className="is-muted">RU</span>
+            <button 
+              className={`footer__language-btn ${currentLanguage === "EN" ? "is-active" : "is-muted"}`}
+              onClick={() => handleLanguageSelect("EN")}
+              type="button"
+            >
+              EN
+            </button>
+            <button 
+              className={`footer__language-btn ${currentLanguage === "AM" ? "is-active" : "is-muted"}`}
+              onClick={() => handleLanguageSelect("AM")}
+              type="button"
+            >
+              AM
+            </button>
+            <button 
+              className={`footer__language-btn ${currentLanguage === "RU" ? "is-active" : "is-muted"}`}
+              onClick={() => handleLanguageSelect("RU")}
+              type="button"
+            >
+              RU
+            </button>
           </div>
 
           <div className="footer__columns">
             <section className="footer__column">
-              <h3 className="footer__heading">Կապ</h3>
+              <h3 className="footer__heading">{t.footer.contactTitle}</h3>
               <a className="footer__contact" href="tel:+37498565656">
                 <img src="/assets/icons/phone.svg" alt="" aria-hidden="true" />
                 <span>+374 98 56 56 56</span>
@@ -400,9 +635,9 @@ export default function App() {
             </section>
 
             <section className="footer__column">
-              <h3 className="footer__heading">Բաժիններ</h3>
+              <h3 className="footer__heading">{t.footer.sectionsTitle}</h3>
               <div className="footer__links">
-                {footerLinks.map((link) => (
+                {t.footer.sections.map((link) => (
                   <a href={`#${slugify(link)}`} key={link}>
                     {link}
                   </a>
@@ -411,13 +646,13 @@ export default function App() {
             </section>
 
             <section className="footer__column">
-              <h3 className="footer__heading">Մեդիա</h3>
+              <h3 className="footer__heading">{t.footer.mediaTitle}</h3>
               <div className="footer__socials">
                 <a aria-label="Instagram" href="https://instagram.com" target="_blank" rel="noreferrer">
-                  <img src="/assets/icons/instagram.svg" alt="" aria-hidden="true" />
+                  <img src="/assets/icons/inst.svg" alt="" aria-hidden="true" />
                 </a>
                 <a aria-label="Facebook" href="https://facebook.com" target="_blank" rel="noreferrer">
-                  <img src="/assets/icons/facebook.svg" alt="" aria-hidden="true" />
+                  <img src="/assets/icons/fb.svg" alt="" aria-hidden="true" />
                 </a>
               </div>
             </section>
@@ -426,14 +661,94 @@ export default function App() {
           <p className="footer__wordmark">GREEN CORE</p>
         </div>
       </footer>
+
+      {showDatePicker && (
+        <div className="modal-overlay" onClick={handleCloseModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2 className="modal-title">
+                {currentLanguage === "AM" && "Ընտրեք ցանկալի ամսաթիվ"}
+                {currentLanguage === "EN" && "Select your preferred date"}
+                {currentLanguage === "RU" && "Выберите предпочитаемую дату"}
+              </h2>
+              <button className="modal-close" onClick={handleCloseModal} type="button">&times;</button>
+            </div>
+            <div className="modal-body">
+              <div className="modal-section">
+                <label className="modal-label">
+                  {currentLanguage === "AM" && "Անուն"}
+                  {currentLanguage === "EN" && "Name"}
+                  {currentLanguage === "RU" && "Имя"}
+                </label>
+                <input
+                  type="text"
+                  className="modal-input"
+                  placeholder={currentLanguage === "AM" ? "Ձեր անունը" : currentLanguage === "EN" ? "Your name" : "Ваше имя"}
+                  value={visitorName}
+                  onChange={(e) => setVisitorName(e.target.value)}
+                />
+              </div>
+              
+              <div className="modal-section">
+                <label className="modal-label">
+                  {currentLanguage === "AM" && "Հեռախոսահամար"}
+                  {currentLanguage === "EN" && "Phone Number"}
+                  {currentLanguage === "RU" && "Номер телефона"}
+                </label>
+                <input
+                  type="tel"
+                  className="modal-input"
+                  placeholder={currentLanguage === "AM" ? "+374 98 56 56 56" : currentLanguage === "EN" ? "+374 98 56 56 56" : "+374 98 56 56 56"}
+                  value={visitorPhone}
+                  onChange={(e) => setVisitorPhone(e.target.value)}
+                />
+              </div>
+
+              <div className="modal-section">
+                <label className="modal-label">
+                  {currentLanguage === "AM" && "Ընտրեք ցանկալի ամսաթիվ"}
+                  {currentLanguage === "EN" && "Select your preferred date"}
+                  {currentLanguage === "RU" && "Выберите предпочитаемую дату"}
+                </label>
+                <Calendar
+                  onChange={handleDateSelect}
+                  minDate={new Date()}
+                  value={selectedDate}
+                />
+              </div>
+            </div>
+            <div className="modal-footer">
+              <button className="button button--ghost" onClick={handleCloseModal} type="button">
+                {currentLanguage === "AM" && "Չեղարկել"}
+                {currentLanguage === "EN" && "Cancel"}
+                {currentLanguage === "RU" && "Отмена"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
 function slugify(label) {
+  // Armenian labels
   if (label === "Մեր մասին") return "about";
   if (label === "Արտադրանք") return "products";
   if (label === "Գործընթաց") return "process";
   if (label === "Տուրիզմ") return "tourism";
+  
+  // English labels
+  if (label === "About") return "about";
+  if (label === "Products") return "products";
+  if (label === "Process") return "process";
+  if (label === "Tourism") return "tourism";
+  
+  // Russian labels
+  if (label === "О нас") return "about";
+  if (label === "Продукция") return "products";
+  if (label === "Процесс") return "process";
+  if (label === "Туризм") return "tourism";
+  
   return "why-choose";
 }

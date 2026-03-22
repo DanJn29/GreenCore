@@ -407,6 +407,21 @@ export default function App() {
   const [visitorName, setVisitorName] = React.useState("");
   const [visitorPhone, setVisitorPhone] = React.useState("");
 
+  // About slider state
+  const [aboutImageIndex, setAboutImageIndex] = React.useState(0);
+  const aboutImages = [
+    { src: fruitAssets.fig.aboutImage, alt: "fig" },
+    { src: fruitAssets.peach.aboutImage, alt: "peach" },
+    { src: fruitAssets.nectarine.aboutImage, alt: "nectarine" }
+  ];
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setAboutImageIndex((prevIndex) => (prevIndex + 1) % aboutImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [aboutImages.length]);
+
   const languages = [
     { code: "AM", label: "Armenian" },
     { code: "EN", label: "English" },
@@ -570,7 +585,10 @@ export default function App() {
 
           <div className="split split--reversed">
             <div className="media-card media-card--large media-card--fig-box">
-              <img src={fruitAssets[selectedFruit].aboutImage} alt={t.products.fruits[selectedFruit]} />
+              <img 
+                src={aboutImages[aboutImageIndex].src} 
+                alt={t.products.fruits[aboutImages[aboutImageIndex].alt]} 
+              />
             </div>
 
             <div className="copy-block copy-block--bordered">

@@ -457,7 +457,9 @@ button {
 
 .media-card--fig-box {
   width: min(100%, 680px);
+  height: 480px;
   justify-self: end;
+  position: relative;
 }
 
 .section-header {
@@ -938,9 +940,16 @@ button {
   }
 
   .split--framed .copy-block,
-  .copy-block--bordered,
+  .copy-block--bordered {
+    min-height: 440px;
+  }
+
   .media-card--large {
     min-height: 440px;
+  }
+
+  .media-card--fig-box {
+    height: 440px;
   }
 
   .media-card--fig-box {

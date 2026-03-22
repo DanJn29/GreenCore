@@ -25,11 +25,28 @@ const translations = {
     },
     products: {
       title: "Արտադրանք",
-      cards: [
-        { title: "Թարմ թուզ", description: "Օրգանիկ, էկոլոգիապես մաքուր բերք՝ իդեալական սուպերմարկետների և ռեստորանային ցանցերի համար:" },
-        { title: "Արտահանում", description: "Միջազգային (ԵԱՏՄ, ԵՄ) ստանդարտներին համապատասխանող փաթեթավորում և որակի հավաստագրում:" },
-        { title: "Մեծածախ մատակարարում", description: "Ճկուն պայմաններ ներքին շուկայի գործընկերների համար:" },
-      ],
+      fruits: {
+        fig: "Թուզ",
+        peach: "Դեղձ",
+        nectarine: "Նեկտարին",
+      },
+      cards: {
+        fig: [
+          { title: "Թուզ", description: "Օրգանիկ, էկոլոգիապես մաքուր բերք՝ իդեալական սուպերմարկետների և ռեստորանային ցանցերի համար:" },
+          { title: "Արտահանում", description: "Միջազգային (ԵԱՏՄ, ԵՄ) ստանդարտներին համապատասխանող փաթեթավորում և որակի հավաստագրում:" },
+          { title: "Մեծածախ մատակարարում", description: "Ճկուն պայմաններ ներքին շուկայի գործընկերների համար:" },
+        ],
+        peach: [
+          { title: "Դեղձ", description: "Արևահամ, հյութալի և նուրբ դեղձ՝ աճեցված բացառապես օրգանիկ պայմաններում: Ունի վառ արտահայտված բույր և բնական քաղցրություն։" },
+          { title: "Արտահանում", description: "Ձեռքով զգույշ հավաքագրում և բազմաշերտ հարվածակայուն փաթեթավորում, որն ապահովում է նուրբ մրգի անվնաս և թարմ տեղափոխումը։" },
+          { title: "Մեծածախ մատակարարում", description: "Կայուն ծավալներ և անխափան մատակարարում ներքին շուկայի խոշոր առևտրային ցանցերի, ինչպես նաև հյութերի և չրերի արտադրողների համար։" },
+        ],
+        nectarine: [
+          { title: "Նեկտարին", description: "Հարթ, պինդ, փայլուն և վառ գունավորմամբ նեկտարիններ: Առանձնանում են իրենց կատարյալ  տեսքով և խրթխրթան միջուկով:" },
+          { title: "Արտահանում", description: "Բարձր փոխադրելիություն և երկար պահպանման ժամկետ, ինչը դարձնում է այն արտահանման համար ամենահուսալի և շահավետ պրոդուկտներից մեկը:" },
+          { title: "Մեծածախ մատակարարում", description: "Գերազանց ընտրություն սուպերմարկետների և HoReCa ոլորտի համար, որտեղ վիզուալ գրավչությունը և թարմությունը առաջնային են։" },
+        ],
+      },
     },
     process: {
       title: "Գործընթաց",
@@ -39,7 +56,7 @@ const translations = {
           bullets: ["Սանիտարական և ձևավորող էտ", "Վնասված և հին ճյուղերի հեռացում", "Կանխարգելիչ պաշտպանություն", "Կաթիլային ոռոգման համակարգի ստուգում"],
         },
         {
-          title: "2․ Վեգետացիայի սկիզբ (մարտ–ապրիլ)",
+          title: "2․ Վեգետացիայի սկիզկբ (մարտ–ապրիլ)",
           bullets: ["Սեզոնային սնուցման ապահովում", "Կանոնավոր ոռոգման մեկնարկ", "Հողի վիճակի վերահսկում", "Նոր աճի և տերևային զանգվածի վերահսկում"],
         },
         {
@@ -79,7 +96,7 @@ const translations = {
         { title: "Վստահելիեւթյուն", description: "Ընտանեկան բիզնեսի նվիրվածություն և բիզնես-պրոցեսների թափանցիկություն։" },
         { title: "Գլոբալ հասանելիություն", description: "Պատրաստ ենք արտահանման ցանկացած ծավալի պահանջարկի:" },
       ],
-      summary: "Էկոլոգիական պատասխանատվություն, նորարարական մտածելակերպ ևվ երկարաժամկետ, փոխշահավետ Համագործակցություն:",
+      summary: "Էկոլոգիական պատասխանատվություն, նորարարական մտածելակերպ և երկարաժամկետ, փոխշահավետ Համագործակցություն:",
       cta: "Դառնալ գործընկեր",
     },
     footer: {
@@ -111,11 +128,28 @@ const translations = {
     },
     products: {
       title: "Products",
-      cards: [
-        { title: "Fresh Figs", description: "Organic, ecologically clean harvest, ideal for supermarkets and restaurant chains." },
-        { title: "Export", description: "Packaging and quality certification meeting international (EAEU, EU) standards." },
-        { title: "Wholesale Supply", description: "Flexible terms for partners in the domestic market." },
-      ],
+      fruits: {
+        fig: "Fig",
+        peach: "Peach",
+        nectarine: "Nectarine",
+      },
+      cards: {
+        fig: [
+          { title: "Fig", description: "Organic, environmentally friendly harvest, ideal for supermarkets and restaurant chains." },
+          { title: "Export", description: "Packaging and quality certification meeting international (EAEU, EU) standards." },
+          { title: "Wholesale Supply", description: "Flexible terms for partners in the domestic market." },
+        ],
+        peach: [
+          { title: "Peach", description: "A sunny, juicy and delicate peach grown exclusively in organic conditions. It has a bright aroma and natural sweetness." },
+          { title: "Export", description: "Careful hand picking and multi-layered, impact-resistant packaging ensure the delicate fruit is transported safely and fresh." },
+          { title: "Wholesale Supply", description: "Stable volumes and uninterrupted supply for large retail chains in the domestic market, as well as juice and dried fruit producers." },
+        ],
+        nectarine: [
+          { title: "Nectarine", description: "Smooth, firm, shiny, and brightly colored nectarines. They are distinguished by their perfect shape and crispy flesh." },
+          { title: "Export", description: "High transportability and long shelf life make it one of the most reliable and profitable products for export." },
+          { title: "Wholesale Supply", description: "An excellent choice for supermarkets and the HoReCa sector, where visual appeal and freshness are paramount." },
+        ],
+      },
     },
     process: {
       title: "Process",
@@ -197,11 +231,28 @@ const translations = {
     },
     products: {
       title: "Продукция",
-      cards: [
-        { title: "Свежий инжир", description: "Органический, экологически чистый урожай, идеально подходящий для супермаркетов и ресторанных сетей." },
-        { title: "Экспорт", description: "Упаковка и сертификация качества, соответствующие международным стандартам (ЕАЭС, ЕС)." },
-        { title: "Оптовые поставки", description: "Гибкие условия для партнеров на внутреннем рынке." },
-      ],
+      fruits: {
+        fig: "Инжир",
+        peach: "Персик",
+        nectarine: "Нектарин",
+      },
+      cards: {
+        fig: [
+          { title: "Инжир", description: "Органический, экологически чистый урожай, идеально подходящий для супермаркетов и сетей ресторанов." },
+          { title: "Экспорт", description: "Упаковка и сертификация качества, соответствующие международным стандартам (ЕАЭС, ЕС)." },
+          { title: "Оптовые поставки", description: "Гибкие условия для партнеров на внутреннем рынке." },
+        ],
+        peach: [
+          { title: "Персик", description: "Солнечный, сочный и нежный персик, выращенный исключительно в органических условиях. Обладает ярким ароматом и естественной сладостью." },
+          { title: "Экспорт", description: "Тщательный ручной сбор и многослойная ударопрочная упаковка гарантируют безопасную и свежую транспортировку нежных фруктов." },
+          { title: "Оптовые поставки", description: "Стабильные объемы и бесперебойные поставки для крупных розничных сетей на внутреннем рынке, а также для производителей соков и сухофруктов." },
+        ],
+        nectarine: [
+          { title: "Нектарин", description: "Нектарины гладкие, плотные, блестящие и ярко окрашенные. Они отличаются идеальной формой и хрустящей мякотью." },
+          { title: "Экспорт", description: "Высокая транспортабельность и длительный срок хранения делают его одним из самых надежных и выгодных продуктов для экспорта." },
+          { title: "Оптовые поставки", description: "Отличный выбор для супермаркетов и сектора HoReCa, где визуальная привлекательность и свежесть имеют первостепенное значение." },
+        ],
+      },
     },
     process: {
       title: "Процесс",
@@ -249,7 +300,7 @@ const translations = {
         { title: "100% Органика", description: "Чистота, соответствующая международным стандартам." },
         { title: "Инновации", description: "Стабильное и предсказуемое качество благодаря AgTech-решениям." },
         { title: "Надежность", description: "Преданность семейного бизнеса и прозрачность бизнес-процессов." },
-        { title: "Глобальная доступность", description: "Готовы к экспорту на любой объем спроса." },
+        { title: "Global Accessibility", description: "Готовы к экспорту на любой объем спроса." },
       ],
       summary: "Экологическая ответственность, инновационное мышление и долгосрочное, взаимовыгодное сотрудничество.",
       cta: "Стать партнёром",
@@ -257,13 +308,70 @@ const translations = {
     footer: {
       contactTitle: "Контакт",
       sectionsTitle: "Разделы",
-      mediaTitle: "Медиа",
+      mediaTitle: "Media",
       sections: ["О нас", "Продукция", "Процесс", "Туризм", "Почему мы"],
     },
   },
 };
 
-const navItems = translations.AM.navItems;
+// --- EDIT PHOTO PATHS HERE ---
+const fruitAssets = {
+  fig: {
+    aboutImage: "/assets/photos/about-fig-box.jpg",
+    productImages: [
+      "/assets/photos/product-fresh-figs.png",   // Card 1
+      "/assets/photos/product-export.jpg",       // Card 2
+      "/assets/photos/product-wholesale.jpg"     // Card 3
+    ],
+    processImages: [
+      "/assets/photos/process-winter-pruning.png",   // Step 1
+      "/assets/photos/process-spring-growth.png",    // Step 2
+      "/assets/photos/process-fruit-formation.png",  // Step 3
+      "/assets/photos/process-harvest.png",          // Step 4
+      "/assets/photos/process-postharvest.png",      // Step 5
+      "/assets/photos/process-packaging.png",        // Step 6
+      "/assets/photos/process-logistics.png"         // Step 7
+    ],
+    icon: "/assets/icons/fig.svg"
+  },
+  peach: {
+    aboutImage: "/assets/photos/Peach.png",
+    productImages: [
+      "/assets/photos/peach/ProductImagepeach3.png",       // PLACEHOLDER: Change to peach photo
+      "/assets/photos/peach/ProductImagepeach2.png",           // PLACEHOLDER: Change to peach photo
+      "/assets/photos/peach/ProductImagepeach1.png"         // PLACEHOLDER: Change to peach photo
+    ],
+    processImages: [
+      "/assets/photos/peach/1.png",   // Step 1
+      "/assets/photos/peach/2.png",    // Step 2
+      "/assets/photos/peach/3.png",    // Step 3
+      "/assets/photos/peach/4.png",    // Step 4
+      "/assets/photos/peach/5.png",    // Step 5
+      "/assets/photos/peach/SeasonImage-1.png",    // Step 6
+      "/assets/photos/peach/7.png"         // Step 7
+    ],
+    icon: "/assets/icons/peach.svg"
+  },
+  nectarine: {
+    aboutImage: "/assets/photos/Nectarine.png",
+    productImages: [
+      "/assets/photos/nectarine/ProductImage.png",       // PLACEHOLDER: Change to nectarine photo
+      "/assets/photos/nectarine/12.png",           // PLACEHOLDER: Change to nectarine photo
+      "/assets/photos/nectarine/13.png"         // PLACEHOLDER: Change to nectarine photo
+    ],
+    processImages: [
+      "/assets/photos/nectarine/1.png",   // Step 1
+      "/assets/photos/nectarine/2.png",    // Step 2
+      "/assets/photos/nectarine/3.png",  // Step 3
+      "/assets/photos/nectarine/4.png",          // Step 4
+      "/assets/photos/nectarine/5.png",      // Step 5
+      "/assets/photos/nectarine/6.png",        // Step 6
+      "/assets/photos/nectarine/7.png"         // Step 7
+    ],
+    icon: "/assets/icons/nectarine.svg"
+  }
+};
+
 const partners = [
   { src: "/assets/brand/Frame.svg", alt: "Partner logo" },
   { src: "/assets/brand/lidl2.svg", alt: "Lidl" },
@@ -272,67 +380,6 @@ const partners = [
   { src: "/assets/brand/Frame-1.svg", alt: "Partner logo" },
   { src: "/assets/brand/spar-1.svg", alt: "Spar" },
   { src: "/assets/brand/Spayka_ideVadFEMu_1.svg", alt: "Spayka" },
-];
-
-const productCards = [
-  {
-    type: "image",
-    image: "/assets/photos/product-fresh-figs.png",
-    alt: "Թարմ թզի արտադրանք",
-  },
-  {
-    type: "feature",
-    icon: "/assets/icons/fig.svg",
-  },
-  {
-    type: "image",
-    image: "/assets/photos/product-export.jpg",
-    alt: "Արտահանման համար նախատեսված թուզ",
-  },
-  {
-    type: "feature",
-    icon: "/assets/icons/export.svg",
-  },
-  {
-    type: "image",
-    image: "/assets/photos/product-wholesale.jpg",
-    alt: "Մեծածախ մատակարարման գործընկերային աշխատանք",
-  },
-  {
-    type: "feature",
-    icon: "/assets/icons/supply.svg",
-  },
-];
-
-const processSteps = [
-  {
-    image: "/assets/photos/process-winter-pruning.png",
-    reverse: false,
-  },
-  {
-    image: "/assets/photos/process-spring-growth.png",
-    reverse: true,
-  },
-  {
-    image: "/assets/photos/process-fruit-formation.png",
-    reverse: false,
-  },
-  {
-    image: "/assets/photos/process-harvest.png",
-    reverse: true,
-  },
-  {
-    image: "/assets/photos/process-postharvest.png",
-    reverse: false,
-  },
-  {
-    image: "/assets/photos/process-packaging.png",
-    reverse: true,
-  },
-  {
-    image: "/assets/photos/process-logistics.png",
-    reverse: false,
-  },
 ];
 
 const whyChooseCards = [
@@ -354,6 +401,7 @@ const whyChooseCards = [
 
 export default function App() {
   const [currentLanguage, setCurrentLanguage] = React.useState("AM");
+  const [selectedFruit, setSelectedFruit] = React.useState("fig");
   const [showDatePicker, setShowDatePicker] = React.useState(false);
   const [selectedDate, setSelectedDate] = React.useState(null);
   const [visitorName, setVisitorName] = React.useState("");
@@ -368,8 +416,18 @@ export default function App() {
   const t = translations[currentLanguage];
   const navItemsTranslated = t.navItems;
 
+  const fruits = [
+    { id: "fig", label: t.products.fruits.fig },
+    { id: "peach", label: t.products.fruits.peach },
+    { id: "nectarine", label: t.products.fruits.nectarine },
+  ];
+
   const handleLanguageSelect = (code) => {
     setCurrentLanguage(code);
+  };
+
+  const handleFruitSelect = (fruitId) => {
+    setSelectedFruit(fruitId);
   };
 
   const handleBookVisit = () => {
@@ -387,6 +445,43 @@ export default function App() {
   const handleCloseModal = () => {
     setShowDatePicker(false);
   };
+
+  // Build the dynamic process list from the fruitAssets object
+  const processSteps = fruitAssets[selectedFruit].processImages.map((imgPath, index) => ({
+    image: imgPath,
+    reverse: index % 2 !== 0 // Automatically alternate layout
+  }));
+
+  // Build the product cards list from the fruitAssets object
+  const productCards = [
+    {
+      type: "image",
+      image: fruitAssets[selectedFruit].productImages[0],
+      alt: t.products.cards[selectedFruit][0].title,
+    },
+    {
+      type: "feature",
+      icon: fruitAssets[selectedFruit].icon,
+    },
+    {
+      type: "image",
+      image: fruitAssets[selectedFruit].productImages[1],
+      alt: t.products.cards[selectedFruit][1].title,
+    },
+    {
+      type: "feature",
+      icon: "/assets/icons/export.svg",
+    },
+    {
+      type: "image",
+      image: fruitAssets[selectedFruit].productImages[2],
+      alt: t.products.cards[selectedFruit][2].title,
+    },
+    {
+      type: "feature",
+      icon: "/assets/icons/supply.svg",
+    },
+  ];
 
   return (
     <div className="page">
@@ -416,7 +511,6 @@ export default function App() {
                 aria-haspopup="true"
               >
                 {currentLanguage}
-                {/* <span className="lang-dropdown__arrow">▼</span> */}
               </button>
               <ul className="lang-dropdown__menu">
                 {languages.map((lang) => (
@@ -476,7 +570,7 @@ export default function App() {
 
           <div className="split split--reversed">
             <div className="media-card media-card--large media-card--fig-box">
-              <img src="/assets/photos/about-fig-box.jpg" alt="Թուզի ընտրանի" />
+              <img src={fruitAssets[selectedFruit].aboutImage} alt={t.products.fruits[selectedFruit]} />
             </div>
 
             <div className="copy-block copy-block--bordered">
@@ -488,19 +582,45 @@ export default function App() {
 
       <section className="section products" id="products">
         <div className="shell shell--wide">
-          <p className="section-title">{t.products.title}</p>
+          <div className="section-header">
+            <p className="section-title">{t.products.title}</p>
+            
+            <div className="fruit-dropdown">
+              <button 
+                className="fruit-badge" 
+                type="button"
+                aria-haspopup="true"
+              >
+                {t.products.fruits[selectedFruit]}
+                <span className="fruit-dropdown__arrow">▼</span>
+              </button>
+              <ul className="fruit-dropdown__menu">
+                {fruits.map((fruit) => (
+                  <li key={fruit.id}>
+                    <button
+                      className={`fruit-dropdown__item ${selectedFruit === fruit.id ? "is-active" : ""}`}
+                      onClick={() => handleFruitSelect(fruit.id)}
+                      type="button"
+                    >
+                      {fruit.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
 
           <div className="product-grid">
             {productCards.map((card, index) =>
               card.type === "image" ? (
-                <article className="product-card product-card--image" key={card.image}>
+                <article className="product-card product-card--image" key={`${selectedFruit}-img-${index}`}>
                   <img src={card.image} alt={card.alt} />
                 </article>
               ) : (
-                <article className="product-card product-card--feature" key={`feature-${index}`}>
+                <article className="product-card product-card--feature" key={`${selectedFruit}-feature-${index}`}>
                   <img className="product-card__icon" src={card.icon} alt="" aria-hidden="true" />
-                  <h3 className="product-card__title">{t.products.cards[Math.floor(index / 2)].title}</h3>
-                  <p className="product-card__text">{t.products.cards[Math.floor(index / 2)].description}</p>
+                  <h3 className="product-card__title">{t.products.cards[selectedFruit][Math.floor(index / 2)].title}</h3>
+                  <p className="product-card__text">{t.products.cards[selectedFruit][Math.floor(index / 2)].description}</p>
                 </article>
               ),
             )}
@@ -516,7 +636,7 @@ export default function App() {
             {processSteps.map((step, index) => (
               <article
                 className={`process-row ${step.reverse ? "process-row--reverse" : ""}`}
-                key={`process-${index}`}
+                key={`${selectedFruit}-process-${index}`}
               >
                 <div className="process-row__copy">
                   <h3 className="process-row__title">{t.process.steps[index].title}</h3>

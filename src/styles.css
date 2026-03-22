@@ -460,6 +460,108 @@ button {
   justify-self: end;
 }
 
+.section-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.section-header .section-title {
+  margin-bottom: 0;
+}
+
+.fruit-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 140px;
+  height: 48px;
+  padding: 0 20px;
+  border: 2px solid var(--color-green);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-green);
+  font-family: "Noto Sans Armenian", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.fruit-badge:hover,
+.fruit-dropdown:hover .fruit-badge {
+  background: var(--color-green);
+  color: var(--color-cream-soft);
+}
+
+.fruit-dropdown {
+  position: absolute;
+  right: 0;
+}
+
+.fruit-dropdown__arrow {
+  display: inline-block;
+  font-size: 10px;
+  transition: transform 200ms ease;
+}
+
+.fruit-dropdown:hover .fruit-dropdown__arrow {
+  transform: rotate(180deg);
+}
+
+.fruit-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+  background: var(--color-green);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  min-width: 180px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease, visibility 200ms ease, transform 200ms ease;
+}
+
+.fruit-dropdown:hover .fruit-dropdown__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.fruit-dropdown__item {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  border: 0;
+  background: transparent;
+  color: var(--color-cream-soft);
+  font-family: "Noto Sans Armenian", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+  text-align: left;
+}
+
+.fruit-dropdown__item:hover {
+  background: rgba(249, 250, 244, 0.15);
+}
+
+.fruit-dropdown__item.is-active {
+  background: rgba(249, 250, 244, 0.25);
+  font-weight: 700;
+}
+
 .products {
   padding-top: 68px;
   padding-bottom: 76px;
@@ -995,6 +1097,27 @@ button {
   .section-title {
     margin-bottom: 26px;
     font-size: 18px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+
+  .fruit-dropdown {
+    position: static;
+  }
+
+  .section-header .section-title {
+    margin-bottom: 0;
+  }
+
+  .fruit-badge {
+    min-width: 120px;
+    height: 40px;
+    font-size: 14px;
+    padding: 0 16px;
   }
 
   .partner-strip {

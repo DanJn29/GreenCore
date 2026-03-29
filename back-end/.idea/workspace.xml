@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="04f1f2ec-2368-4a67-9082-2c475cb30858" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/brand/Frame-1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/brand/Frame.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/brand/Spayka_ideVadFEMu_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/brand/billa-seeklogo1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/brand/edeka1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/brand/lidl2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/brand/spar-1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/icons/email.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/icons/export.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/icons/facebook.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/icons/fb.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/icons/fig.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/icons/inst.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/icons/instagram.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/icons/location.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/icons/nectarine.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/icons/peach.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/icons/phone.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/icons/supply.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/Nectarine.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/Peach.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/about-fig-box.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/about-smart-orchard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/hero-orchard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/nectarine/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/nectarine/12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/nectarine/13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/nectarine/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/nectarine/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/nectarine/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/nectarine/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/nectarine/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/nectarine/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/nectarine/ProductImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/peach/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/peach/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/peach/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/peach/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/peach/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/peach/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/peach/ProductImagepeach1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/peach/ProductImagepeach2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/peach/ProductImagepeach3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/peach/SeasonImage-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/process-fruit-formation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/process-harvest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/process-logistics.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/process-packaging.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/process-postharvest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/process-spring-growth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/process-winter-pruning.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/product-export.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/product-fresh-figs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/product-wholesale.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/tourism-visit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/why-global.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/why-innovation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/why-organic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/assets/photos/why-trust.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/App.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vite.config.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="3Bbp9CXC6LAfL9gerEfMoPPrbXK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/daniel/VsCodeProjects/GreenCore/back-end",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PY-251.23774.444" />
+        <option value="bundled-python-sdk-890ed5b35930-d9c5bdb153f4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.23774.444" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="04f1f2ec-2368-4a67-9082-2c475cb30858" name="Changes" comment="" />
+      <created>1774767470259</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1774767470259</updated>
+      <workItem from="1774767471367" duration="314000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

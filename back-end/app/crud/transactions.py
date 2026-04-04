@@ -173,6 +173,12 @@ def update_transaction(
 
 def delete_transaction(db: Session, current_user: User, transaction_id: int) -> None:
     transaction = get_user_transaction(db, current_user, transaction_id)
+    if transaction.status != TransactionStatus.pending:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Only pending transactions can be deleted.",
+        )
+
     product = db.get(Product, transaction.product_id)
     if product is not None:
         product.quantity += transaction.quantity

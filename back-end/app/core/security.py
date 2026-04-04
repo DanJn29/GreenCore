@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from datetime import datetime, timedelta, timezone
 from typing import Any
+from uuid import uuid4
 
 from jose import jwt
 from passlib.context import CryptContext
@@ -25,7 +26,7 @@ def create_access_token(subject: int | str, expires_delta: timedelta | None = No
         if expires_delta is not None
         else timedelta(minutes=settings.jwt_access_token_expire_minutes)
     )
-    payload: dict[str, Any] = {"sub": str(subject), "exp": expire}
+    payload: dict[str, Any] = {"sub": str(subject), "exp": expire, "jti": str(uuid4())}
     return jwt.encode(payload, settings.jwt_secret_key, algorithm=settings.jwt_algorithm)
 
 

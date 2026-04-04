@@ -24,6 +24,13 @@ class ProductRead(ProductBase):
     model_config = ConfigDict(from_attributes=True)
 
 
+class UserProductRead(BaseModel):
+    product_id: int
+    product_type: str
+
+    model_config = ConfigDict(from_attributes=True)
+
+
 class AdminProductRead(BaseModel):
     product_id: int
     product_type: str

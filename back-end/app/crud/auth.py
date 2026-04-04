@@ -1,14 +1,18 @@
 from __future__ import annotations
 
+from datetime import datetime, timezone
+
 from fastapi import HTTPException, status
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
+from app.api.deps import AuthenticatedTokenContext
 from app.core.security import create_access_token, get_password_hash, verify_password
 from app.models.enums import UserRole
 from app.models.product import Product
+from app.models.revoked_token import RevokedToken
 from app.models.user import User
-from app.schemas.auth import LoginRequest, RegisterRequest, TokenResponse
+from app.schemas.auth import LoginRequest, LogoutResponse, RegisterRequest, TokenResponse
 from app.schemas.user import UserUpdate
 
 
@@ -45,6 +49,23 @@ def login_user(db: Session, payload: LoginRequest) -> TokenResponse:
 
     access_token = create_access_token(subject=user.id)
     return TokenResponse(access_token=access_token, role=user.role)
+
+
+def logout_user(db: Session, token_context: AuthenticatedTokenContext) -> LogoutResponse:
+    jti = str(token_context.payload["jti"])
+    expires_at = datetime.fromtimestamp(float(token_context.payload["exp"]), tz=timezone.utc)
+    revoked_token = db.scalar(select(RevokedToken).where(RevokedToken.jti == jti))
+
+    if revoked_token is None:
+        db.add(
+            RevokedToken(
+                jti=jti,
+                expires_at=expires_at,
+            )
+        )
+        db.commit()
+
+    return LogoutResponse(message="Logged out successfully.")
 
 
 def update_user(db: Session, current_user: User, payload: UserUpdate) -> User:

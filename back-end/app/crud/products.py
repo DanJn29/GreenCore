@@ -25,6 +25,11 @@ def list_all_products_for_admin(db: Session) -> list[Product]:
     return list(db.scalars(statement).all())
 
 
+def list_available_products_for_user(db: Session) -> list[Product]:
+    statement = select(Product).where(Product.quantity > 0).order_by(Product.id.asc())
+    return list(db.scalars(statement).all())
+
+
 def get_product_for_admin(db: Session, product_id: int) -> Product:
     product = db.get(Product, product_id)
     if product is None:

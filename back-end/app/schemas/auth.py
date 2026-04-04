@@ -30,3 +30,8 @@ class TokenResponse(BaseModel):
     access_token: str
     token_type: Literal["bearer"] = "bearer"
     role: UserRole
+
+
+class LogoutResponse(BaseModel):
+    status: Literal["success"] = "success"
+    message: str

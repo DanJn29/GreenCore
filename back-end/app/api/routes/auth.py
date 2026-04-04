@@ -5,11 +5,17 @@ from typing import Annotated
 from fastapi import APIRouter, Depends, Response, status
 from sqlalchemy.orm import Session
 
-from app.api.deps import get_current_user
+from app.api.deps import AuthenticatedTokenContext, get_current_logout_context, get_current_user
 from app.core.database import get_db
-from app.crud.auth import create_user, delete_user, login_user as login_user_crud, update_user
+from app.crud.auth import (
+    create_user,
+    delete_user,
+    login_user as login_user_crud,
+    logout_user as logout_user_crud,
+    update_user,
+)
 from app.models.user import User
-from app.schemas.auth import LoginRequest, RegisterRequest, TokenResponse
+from app.schemas.auth import LoginRequest, LogoutResponse, RegisterRequest, TokenResponse
 from app.schemas.user import UserResponse, UserUpdate
 
 router = APIRouter(prefix="/greencore", tags=["authentication"])
@@ -33,6 +39,14 @@ def login_user(
     db: Annotated[Session, Depends(get_db)],
 ) -> TokenResponse:
     return login_user_crud(db, payload)
+
+
+@router.post("/logout", response_model=LogoutResponse)
+def logout_user(
+    db: Annotated[Session, Depends(get_db)],
+    token_context: Annotated[AuthenticatedTokenContext, Depends(get_current_logout_context)],
+) -> LogoutResponse:
+    return logout_user_crud(db, token_context)
 
 
 @router.get("/me", response_model=UserResponse)

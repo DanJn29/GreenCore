@@ -36,6 +36,7 @@ class BookedUserRead(BookedUserBase):
 class AdminBookedUserRead(BaseModel):
     id: int
     name: str
+    phone: str
     visit_date: datetime
 
     model_config = ConfigDict(from_attributes=True)

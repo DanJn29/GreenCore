@@ -42,3 +42,19 @@ def create_booked_user(db: Session, payload: BookedUserCreate) -> BookedUser:
 def list_booked_users_for_admin(db: Session) -> list[BookedUser]:
     statement = select(BookedUser).order_by(BookedUser.visit_date.asc(), BookedUser.id.asc())
     return list(db.scalars(statement).all())
+
+
+def get_booked_user_for_admin(db: Session, booking_id: int) -> BookedUser:
+    booked_user = db.get(BookedUser, booking_id)
+    if booked_user is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Booking not found.",
+        )
+    return booked_user
+
+
+def delete_booked_user_for_admin(db: Session, booking_id: int) -> None:
+    booked_user = get_booked_user_for_admin(db, booking_id)
+    db.delete(booked_user)
+    db.commit()

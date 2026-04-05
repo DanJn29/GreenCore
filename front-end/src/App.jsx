@@ -655,6 +655,7 @@ const dashboardTranslations = {
       createProduct: "Չհաջողվեց ստեղծել ապրանքը։",
       deleteTransaction: "Չհաջողվեց ջնջել գործարքը։",
       deleteProduct: "Չհաջողվեց ջնջել ապրանքը։",
+      deleteBooking: "Չհաջողվեց ջնջել ամրագրումը։",
       updateTransaction: "Չհաջողվեց թարմացնել գործարքը։",
       updateProduct: "Չհաջողվեց թարմացնել ապրանքը։",
       logout: "Չհաջողվեց դուրս գալ։ Կրկին փորձեք։",
@@ -779,6 +780,7 @@ const dashboardTranslations = {
       createProduct: "Could not create the product.",
       deleteTransaction: "Could not delete the transaction.",
       deleteProduct: "Could not delete the product.",
+      deleteBooking: "Could not delete the booking.",
       updateTransaction: "Could not update the transaction.",
       updateProduct: "Could not update the product.",
       logout: "Could not log out. Please try again.",
@@ -903,6 +905,7 @@ const dashboardTranslations = {
       createProduct: "Не удалось создать продукт.",
       deleteTransaction: "Не удалось удалить транзакцию.",
       deleteProduct: "Не удалось удалить продукт.",
+      deleteBooking: "Не удалось удалить бронирование.",
       updateTransaction: "Не удалось обновить транзакцию.",
       updateProduct: "Не удалось обновить продукт.",
       logout: "Не удалось выйти. Попробуйте снова.",
@@ -2614,10 +2617,6 @@ function UserDashboardPage({ currentLanguage, onLanguageSelect }) {
           </label>
 
           <div className="dashboard-shell__profile">
-            <button className="dashboard-shell__notification" type="button" disabled aria-label="Notifications">
-              <img src={dashboardIcons.notification} alt="" aria-hidden="true" />
-            </button>
-
             <div className="dashboard-shell__user">
               <strong>{displayName}</strong>
               <span>{displayEmail}</span>
@@ -3297,6 +3296,7 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
   });
   const [transactionActionError, setTransactionActionError] = React.useState("");
   const [productActionError, setProductActionError] = React.useState("");
+  const [bookingActionError, setBookingActionError] = React.useState("");
   const [isCreateProductOpen, setIsCreateProductOpen] = React.useState(false);
   const [createProductForm, setCreateProductForm] = React.useState({
     productType: "",
@@ -3314,6 +3314,7 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
     setSearchValue("");
     setTransactionActionError("");
     setProductActionError("");
+    setBookingActionError("");
   }, [activeSection]);
 
   React.useEffect(() => {
@@ -3715,6 +3716,35 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
     }
   };
 
+  const handleDeleteAdminBooking = async (bookingId) => {
+    setBookingActionError("");
+
+    try {
+      await fetchAuthenticatedJson(`/greencore/admin/book/${bookingId}`, authenticatedSession, undefined, {
+        method: "DELETE",
+      });
+
+      setTourismState((current) => ({
+        data: Array.isArray(current.data)
+          ? current.data.filter((booking) => booking.id !== bookingId)
+          : current.data,
+        isLoading: false,
+        error: "",
+      }));
+
+      return true;
+    } catch (error) {
+      if (error.status === 401 || error.status === 403) {
+        clearStoredAuthSession();
+        navigate(error.status === 403 ? "/dashboard/transactions" : "/login", { replace: true });
+        return false;
+      }
+
+      setBookingActionError(resolveDashboardError(error, dashboardText.errors.deleteBooking));
+      return false;
+    }
+  };
+
   const handleOpenCreateProductModal = () => {
     setCreateProductForm({
       productType: "",
@@ -3883,6 +3913,8 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
         dashboardText={dashboardText}
         searchValue={searchValue}
         state={tourismState}
+        errorMessage={bookingActionError}
+        onDeleteBooking={handleDeleteAdminBooking}
       />
     );
   } else if (activeSection === "finances") {
@@ -3998,10 +4030,6 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
           </label>
 
           <div className="dashboard-shell__profile">
-            <button className="dashboard-shell__notification" type="button" disabled aria-label="Notifications">
-              <img src={dashboardIcons.notification} alt="" aria-hidden="true" />
-            </button>
-
             <div className="dashboard-shell__user">
               <strong>{displayName}</strong>
               <span>{displayEmail}</span>
@@ -4921,10 +4949,18 @@ function AdminDashboardProductsSection({
   );
 }
 
-function AdminDashboardTourismSection({ currentLanguage, dashboardText, searchValue, state }) {
+function AdminDashboardTourismSection({
+  currentLanguage,
+  dashboardText,
+  searchValue,
+  state,
+  errorMessage,
+  onDeleteBooking,
+}) {
   const [isFilterOpen, setIsFilterOpen] = React.useState(false);
   const [appliedVisitDate, setAppliedVisitDate] = React.useState(null);
   const [draftVisitDate, setDraftVisitDate] = React.useState(null);
+  const [openRowMenuId, setOpenRowMenuId] = React.useState(null);
   const filterRef = React.useRef(null);
   const bookings = Array.isArray(state.data) ? state.data : [];
   const calendarLocale = dashboardLocales[currentLanguage] || "en-US";
@@ -4979,6 +5015,24 @@ function AdminDashboardTourismSection({ currentLanguage, dashboardText, searchVa
       document.removeEventListener("mousedown", handlePointerDown);
     };
   }, [isFilterOpen]);
+
+  React.useEffect(() => {
+    if (openRowMenuId === null) {
+      return undefined;
+    }
+
+    const handlePointerDown = (event) => {
+      if (!event.target.closest(".dashboard-table__row-actions")) {
+        setOpenRowMenuId(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handlePointerDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+    };
+  }, [openRowMenuId]);
 
   return (
     <section className="dashboard-card">
@@ -5049,6 +5103,12 @@ function AdminDashboardTourismSection({ currentLanguage, dashboardText, searchVa
         </div>
       </div>
 
+      {errorMessage ? (
+        <p className="dashboard-card__feedback dashboard-card__feedback--error" role="alert">
+          {errorMessage}
+        </p>
+      ) : null}
+
       <div className="dashboard-table-wrap">
         <table className="dashboard-table dashboard-table--admin-tourism">
           <thead>
@@ -5057,12 +5117,13 @@ function AdminDashboardTourismSection({ currentLanguage, dashboardText, searchVa
               <th>{dashboardText.columns.name}</th>
               <th>{dashboardText.columns.phone}</th>
               <th className="dashboard-table__date-column">{dashboardText.columns.visitDate}</th>
+              <th className="dashboard-table__actions-column" />
             </tr>
           </thead>
           <tbody>
             {state.isLoading ? (
               <tr>
-                <td className="dashboard-table__message" colSpan="4">
+                <td className="dashboard-table__message" colSpan="5">
                   {dashboardText.loading.tourism}
                 </td>
               </tr>
@@ -5070,7 +5131,7 @@ function AdminDashboardTourismSection({ currentLanguage, dashboardText, searchVa
 
             {!state.isLoading && state.error ? (
               <tr>
-                <td className="dashboard-table__message dashboard-table__message--error" colSpan="4">
+                <td className="dashboard-table__message dashboard-table__message--error" colSpan="5">
                   {state.error}
                 </td>
               </tr>
@@ -5078,23 +5139,64 @@ function AdminDashboardTourismSection({ currentLanguage, dashboardText, searchVa
 
             {!state.isLoading && !state.error && visibleBookings.length === 0 ? (
               <tr>
-                <td className="dashboard-table__message" colSpan="4">
+                <td className="dashboard-table__message" colSpan="5">
                   {dashboardText.empty.tourism}
                 </td>
               </tr>
             ) : null}
 
             {!state.isLoading && !state.error
-              ? visibleBookings.map((booking, index) => (
-                  <tr key={booking.id}>
-                    <td className="dashboard-table__index-cell">{index + 1}</td>
-                    <td className="dashboard-table__text-cell dashboard-table__text-cell--multiline" title={booking.name}>
-                      {booking.name}
-                    </td>
-                    <td>{booking.phone}</td>
-                    <td>{formatDashboardDateTime(booking.visit_date, currentLanguage)}</td>
-                  </tr>
-                ))
+              ? visibleBookings.map((booking, index) => {
+                  const openMenuUpward = index >= visibleBookings.length - 2;
+
+                  return (
+                    <tr key={booking.id}>
+                      <td className="dashboard-table__index-cell">{index + 1}</td>
+                      <td className="dashboard-table__text-cell dashboard-table__text-cell--multiline" title={booking.name}>
+                        {booking.name}
+                      </td>
+                      <td>{booking.phone}</td>
+                      <td>{formatDashboardDateTime(booking.visit_date, currentLanguage)}</td>
+                      <td className="dashboard-table__actions-cell">
+                        <div className="dashboard-table__row-actions">
+                          <button
+                            className="dashboard-table__row-menu"
+                            type="button"
+                            onClick={() =>
+                              setOpenRowMenuId((current) => (current === booking.id ? null : booking.id))
+                            }
+                            aria-label={dashboardText.rowMenu.moreActions}
+                            aria-expanded={openRowMenuId === booking.id}
+                          >
+                            <span />
+                            <span />
+                            <span />
+                          </button>
+
+                          {openRowMenuId === booking.id ? (
+                            <div
+                              className={`dashboard-table__row-menu-panel ${openMenuUpward ? "dashboard-table__row-menu-panel--upward" : ""}`}
+                            >
+                              <button
+                                className="dashboard-table__row-menu-action"
+                                type="button"
+                                onClick={async () => {
+                                  const deleted = await onDeleteBooking(booking.id);
+
+                                  if (deleted) {
+                                    setOpenRowMenuId(null);
+                                  }
+                                }}
+                              >
+                                {dashboardText.rowMenu.delete}
+                              </button>
+                            </div>
+                          ) : null}
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })
               : null}
           </tbody>
         </table>

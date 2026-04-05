@@ -5,6 +5,7 @@ from app.schemas.finance import (
 )
 from app.schemas.auth import LoginRequest, RegisterRequest, TokenResponse
 from app.schemas.booked_user import (
+    AdminBookedUserDeleteResponse,
     AdminBookedUserRead,
     AdminTourismListResponse,
     BookedUserBase,
@@ -28,6 +29,7 @@ __all__ = [
     "BookedUserCreate",
     "BookedUserRead",
     "AdminBookedUserRead",
+    "AdminBookedUserDeleteResponse",
     "AdminFinanceSummaryResponse",
     "AdminTourismListResponse",
     "FinanceSummaryItem",

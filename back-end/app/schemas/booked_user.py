@@ -46,3 +46,8 @@ class AdminTourismListResponse(BaseModel):
     admin_name: str
     admin_email: str
     booked_users: list[AdminBookedUserRead]
+
+
+class AdminBookedUserDeleteResponse(BaseModel):
+    status: str
+    message: str

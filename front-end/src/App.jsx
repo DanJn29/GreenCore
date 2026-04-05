@@ -662,6 +662,7 @@ const dashboardTranslations = {
       productRequired: "Խնդրում ենք ընտրել ապրանքը։",
       productNameRequired: "Խնդրում ենք մուտքագրել ապրանքի անվանումը։",
       quantityRequired: "Խնդրում ենք մուտքագրել ճիշտ քանակ։",
+      quantityMinimum: "Գործարքի նվազագույն քանակը 10000 է։",
       priceRequired: "Խնդրում ենք մուտքագրել ճիշտ գինը։",
       paidRequired: "Խնդրում ենք մուտքագրել ճիշտ վճարված գումարը։",
     },
@@ -787,6 +788,7 @@ const dashboardTranslations = {
       productRequired: "Please select a product.",
       productNameRequired: "Please enter a product name.",
       quantityRequired: "Please enter a valid quantity.",
+      quantityMinimum: "Minimum transaction quantity is 10000.",
       priceRequired: "Please enter a valid price.",
       paidRequired: "Please enter a valid paid amount.",
     },
@@ -912,6 +914,7 @@ const dashboardTranslations = {
       productRequired: "Выберите продукт.",
       productNameRequired: "Введите название продукта.",
       quantityRequired: "Введите корректное количество.",
+      quantityMinimum: "Минимальное количество для транзакции — 10000.",
       priceRequired: "Введите корректную цену.",
       paidRequired: "Введите корректную сумму оплаты.",
     },
@@ -1066,8 +1069,11 @@ const ADMIN_TRANSACTION_STATUS_OPTIONS = [
   "canceled",
 ];
 
+const USER_TRANSACTION_MIN_QUANTITY = 10000;
+
 function HomePage({ currentLanguage, onLanguageSelect }) {
   const [selectedFruit, setSelectedFruit] = React.useState("fig");
+  const [isNavbarProductsSuppressed, setIsNavbarProductsSuppressed] = React.useState(false);
   const [showDatePicker, setShowDatePicker] = React.useState(false);
   const [selectedDate, setSelectedDate] = React.useState(null);
   const [visitorName, setVisitorName] = React.useState("");
@@ -1146,6 +1152,27 @@ function HomePage({ currentLanguage, onLanguageSelect }) {
     resetBookingForm();
     setShowDatePicker(true);
   };
+
+  const handleNavbarFruitSelect = React.useCallback((fruitId) => {
+    setSelectedFruit(fruitId);
+    setIsNavbarProductsSuppressed(true);
+
+    if (typeof document !== "undefined" && document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
+
+    const productsSection = document.getElementById("products");
+    if (productsSection) {
+      productsSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+    if (typeof window !== "undefined") {
+      window.history.replaceState(null, "", "#products");
+    }
+  }, []);
 
   const handleDateSelect = (date) => {
     const nextDate = Array.isArray(date) ? date[0] : date;
@@ -1285,11 +1312,46 @@ function HomePage({ currentLanguage, onLanguageSelect }) {
             </a>
 
             <nav className="nav-pill" aria-label="Primary navigation">
-              {t.navItems.map((item) => (
-                <a key={item.label} className="nav-pill__link" href={item.href}>
-                  {item.label}
-                </a>
-              ))}
+              {t.navItems.map((item) =>
+                item.href === "#products" ? (
+                  <div
+                    className={`nav-pill__dropdown ${isNavbarProductsSuppressed ? "is-suppressed" : ""}`}
+                    key={item.label}
+                    onMouseLeave={() => setIsNavbarProductsSuppressed(false)}
+                  >
+                    <button
+                      className="nav-pill__link nav-pill__dropdown-trigger"
+                      type="button"
+                      aria-haspopup="menu"
+                    >
+                      <span>{item.label}</span>
+                    </button>
+
+                    <ul className="nav-pill__dropdown-menu" role="menu" aria-label={item.label}>
+                      {fruits.map((fruit) => (
+                        <li key={fruit.id} role="none">
+                          <button
+                            className={`nav-pill__dropdown-item ${selectedFruit === fruit.id ? "is-active" : ""}`}
+                            type="button"
+                            role="menuitem"
+                            onClick={() => handleNavbarFruitSelect(fruit.id)}
+                          >
+                            {fruit.label}
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  <a
+                    key={item.label}
+                    className="nav-pill__link"
+                    href={item.href}
+                  >
+                    {item.label}
+                  </a>
+                ),
+              )}
             </nav>
 
             <div className="topbar__controls">
@@ -2373,6 +2435,11 @@ function UserDashboardPage({ currentLanguage, onLanguageSelect }) {
       return;
     }
 
+    if (quantity < USER_TRANSACTION_MIN_QUANTITY) {
+      setCreateTransactionError(dashboardText.errors.quantityMinimum);
+      return;
+    }
+
     setCreateTransactionError("");
     setIsCreatingTransaction(true);
 
@@ -3022,7 +3089,7 @@ function DashboardCreateTransactionModal({
                 id="dashboard-quantity"
                 className="modal-input"
                 type="number"
-                min="0"
+                min={USER_TRANSACTION_MIN_QUANTITY}
                 step="any"
                 placeholder={dashboardText.modal.quantityPlaceholder}
                 value={form.quantity}

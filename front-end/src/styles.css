@@ -138,6 +138,114 @@ button {
   outline: none;
 }
 
+.nav-pill__dropdown {
+  position: relative;
+}
+
+.nav-pill__dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 220px;
+  height: 14px;
+  transform: translateX(-50%);
+}
+
+.nav-pill__dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.nav-pill__dropdown-arrow {
+  display: inline-block;
+  font-size: 9px;
+  transition: transform 200ms ease;
+}
+
+.nav-pill__dropdown:hover .nav-pill__dropdown-arrow,
+.nav-pill__dropdown:focus-within .nav-pill__dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.nav-pill__dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 50%;
+  z-index: 1000;
+  min-width: 170px;
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+  border-radius: 14px;
+  background: var(--color-green);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 180ms ease,
+    visibility 180ms ease;
+}
+
+.nav-pill__dropdown:hover .nav-pill__dropdown-menu,
+.nav-pill__dropdown:focus-within .nav-pill__dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nav-pill__dropdown.is-suppressed .nav-pill__dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.nav-pill__dropdown:hover .nav-pill__dropdown-trigger,
+.nav-pill__dropdown:focus-within .nav-pill__dropdown-trigger {
+  padding: 10px 16px;
+  background: var(--color-cream-soft);
+  color: var(--color-green);
+  font-weight: 700;
+  outline: none;
+}
+
+.nav-pill__dropdown.is-suppressed .nav-pill__dropdown-trigger {
+  padding: 8px 5px;
+  background: transparent;
+  color: inherit;
+  font-weight: 400;
+}
+
+.nav-pill__dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 12px 18px;
+  border: 0;
+  background: transparent;
+  color: var(--color-cream-soft);
+  font-family: "Noto Sans Armenian", sans-serif;
+  font-size: 14px;
+  text-align: left;
+  transition: background-color 160ms ease;
+}
+
+.nav-pill__dropdown-item:hover,
+.nav-pill__dropdown-item:focus-visible {
+  background: rgba(249, 250, 244, 0.15);
+  outline: none;
+}
+
+.nav-pill__dropdown-item.is-active {
+  background: rgba(249, 250, 244, 0.24);
+  font-weight: 700;
+}
+
 .lang-badge {
   display: inline-flex;
   align-items: center;
@@ -1052,6 +1160,17 @@ button {
 
   .nav-pill {
     flex-wrap: wrap;
+  }
+
+  .nav-pill__dropdown-menu {
+    left: 0;
+    transform: none;
+  }
+
+  .nav-pill__dropdown::after {
+    left: 0;
+    width: 100%;
+    transform: none;
   }
 
   .partner-strip {

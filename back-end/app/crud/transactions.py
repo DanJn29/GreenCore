@@ -10,6 +10,8 @@ from app.models.transaction import Transaction
 from app.models.user import User
 from app.schemas.transaction import AdminTransactionUpdate, TransactionCreate
 
+MIN_TRANSACTION_QUANTITY = 10000
+
 
 def get_user_transaction(db: Session, current_user: User, transaction_id: int) -> Transaction:
     statement = (
@@ -35,6 +37,12 @@ def create_transaction(db: Session, current_user: User, payload: TransactionCrea
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Product not found.",
+        )
+
+    if payload.quantity < MIN_TRANSACTION_QUANTITY:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Minimum transaction quantity is {MIN_TRANSACTION_QUANTITY}.",
         )
 
     if payload.quantity > product.quantity:

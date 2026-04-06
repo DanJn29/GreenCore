@@ -2520,6 +2520,10 @@ button {
   color: rgba(44, 44, 44, 0.92);
 }
 
+.dashboard-table tfoot td {
+  border-bottom: 0;
+}
+
 .dashboard-table__index-column,
 .dashboard-table__index-cell {
   width: 46px;
@@ -2529,6 +2533,16 @@ button {
 .dashboard-table__index-cell {
   color: rgba(44, 44, 44, 0.7);
   font-weight: 600;
+}
+
+.dashboard-table__summary-row td {
+  background: rgba(7, 62, 24, 0.06);
+  border-top: 2px solid rgba(7, 62, 24, 0.12);
+  font-weight: 700;
+}
+
+.dashboard-table__summary-label {
+  color: var(--color-green);
 }
 
 .dashboard-table__actions-column,

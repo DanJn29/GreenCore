@@ -610,6 +610,9 @@ const dashboardTranslations = {
       products: "Ապրանքներ",
       tourism: "Տուրիզմ",
     },
+    summaryRows: {
+      overall: "Ընդհանուր ամփոփում",
+    },
     columns: {
       name: "Անուն",
       phone: "Հեռախոս",
@@ -736,6 +739,9 @@ const dashboardTranslations = {
       products: "Products",
       tourism: "Tourism",
     },
+    summaryRows: {
+      overall: "Overall summary",
+    },
     columns: {
       name: "Name",
       phone: "Phone",
@@ -861,6 +867,9 @@ const dashboardTranslations = {
       finances: "Финансы",
       products: "Продукты",
       tourism: "Туризм",
+    },
+    summaryRows: {
+      overall: "Общий итог",
     },
     columns: {
       name: "Имя",
@@ -3141,6 +3150,18 @@ function DashboardFinancesSection({ currentLanguage, dashboardText, searchValue,
   const [draftProductFilter, setDraftProductFilter] = React.useState("");
   const filterRef = React.useRef(null);
   const summaries = Array.isArray(state.data) ? state.data : [];
+  const overallTotals = React.useMemo(
+    () =>
+      summaries.reduce(
+        (totals, summary) => ({
+          total: totals.total + Number(summary.total || 0),
+          paid: totals.paid + Number(summary.paid || 0),
+          debt: totals.debt + Number(summary.debt || 0),
+        }),
+        { total: 0, paid: 0, debt: 0 },
+      ),
+    [summaries],
+  );
   const normalizedSearchValue = searchValue.trim().toLocaleLowerCase();
   const productOptions = React.useMemo(
     () =>
@@ -3317,6 +3338,18 @@ function DashboardFinancesSection({ currentLanguage, dashboardText, searchValue,
                 ))
               : null}
           </tbody>
+          {!state.isLoading && !state.error && summaries.length > 0 ? (
+            <tfoot>
+              <tr className="dashboard-table__summary-row">
+                <td className="dashboard-table__summary-label" colSpan="3">
+                  {dashboardText.summaryRows.overall}
+                </td>
+                <td>{formatDashboardNumber(overallTotals.total, currentLanguage)}</td>
+                <td>{formatDashboardNumber(overallTotals.paid, currentLanguage)}</td>
+                <td>{formatDashboardNumber(overallTotals.debt, currentLanguage)}</td>
+              </tr>
+            </tfoot>
+          ) : null}
         </table>
       </div>
     </section>
@@ -4189,6 +4222,18 @@ function AdminDashboardTransactionsSection({
       }),
     [appliedFilters.companyName, appliedFilters.productType, appliedFilters.status, transactions],
   );
+  const summaryTransactions = React.useMemo(
+    () =>
+      filteredTransactions.reduce(
+        (totals, transaction) => ({
+          total: totals.total + Number(transaction.total || 0),
+          paid: totals.paid + Number(transaction.paid || 0),
+          debt: totals.debt + Number(transaction.debt || 0),
+        }),
+        { total: 0, paid: 0, debt: 0 },
+      ),
+    [filteredTransactions],
+  );
   const normalizedSearchValue = searchValue.trim().toLocaleLowerCase();
   const visibleTransactions = React.useMemo(
     () =>
@@ -4585,6 +4630,21 @@ function AdminDashboardTransactionsSection({
                 })
               : null}
           </tbody>
+          {!state.isLoading && !state.error && filteredTransactions.length > 0 ? (
+            <tfoot>
+              <tr className="dashboard-table__summary-row">
+                <td className="dashboard-table__summary-label" colSpan="5">
+                  {appliedFilters.companyName
+                    ? `${appliedFilters.companyName} · ${dashboardText.summaryRows.overall}`
+                    : dashboardText.summaryRows.overall}
+                </td>
+                <td>{formatDashboardNumber(summaryTransactions.total, currentLanguage)}</td>
+                <td>{formatDashboardNumber(summaryTransactions.paid, currentLanguage)}</td>
+                <td>{formatDashboardNumber(summaryTransactions.debt, currentLanguage)}</td>
+                <td colSpan="2" />
+              </tr>
+            </tfoot>
+          ) : null}
         </table>
       </div>
     </section>
@@ -5274,6 +5334,18 @@ function AdminDashboardTourismSection({
 
 function AdminDashboardFinancesSection({ currentLanguage, dashboardText, searchValue, state }) {
   const summaries = Array.isArray(state.data) ? state.data : [];
+  const overallTotals = React.useMemo(
+    () =>
+      summaries.reduce(
+        (totals, summary) => ({
+          total: totals.total + Number(summary.total || 0),
+          paid: totals.paid + Number(summary.paid || 0),
+          debt: totals.debt + Number(summary.debt || 0),
+        }),
+        { total: 0, paid: 0, debt: 0 },
+      ),
+    [summaries],
+  );
   const normalizedSearchValue = searchValue.trim().toLocaleLowerCase();
   const visibleSummaries = React.useMemo(
     () =>
@@ -5356,6 +5428,18 @@ function AdminDashboardFinancesSection({ currentLanguage, dashboardText, searchV
                 ))
               : null}
           </tbody>
+          {!state.isLoading && !state.error && summaries.length > 0 ? (
+            <tfoot>
+              <tr className="dashboard-table__summary-row">
+                <td className="dashboard-table__summary-label" colSpan="3">
+                  {dashboardText.summaryRows.overall}
+                </td>
+                <td>{formatDashboardNumber(overallTotals.total, currentLanguage)}</td>
+                <td>{formatDashboardNumber(overallTotals.paid, currentLanguage)}</td>
+                <td>{formatDashboardNumber(overallTotals.debt, currentLanguage)}</td>
+              </tr>
+            </tfoot>
+          ) : null}
         </table>
       </div>
     </section>

@@ -23,14 +23,14 @@ const translations = {
     ],
     hero: {
       title: "Նորարարությունն ու բնությունը՝ մեկ այգում",
-      lead: "Ընտանեկան բիզնես, որը միավորում է ավանդական արժեքներն ու ժամանակակից գյուղատնտեսական լուծումները՝ ապահովելով բարձրորակ օրգանիկ թուզ ներքին շուկայի և արտահանման համար։",
+      lead: "Ընտանեկան բիզնես, որը միավորում է ավանդական արժեքներն ու ժամանակակից գյուղատնտեսական լուծումները՝ ապահովելով բարձրորակ օրգանիկ մրգեր ներքին շուկայի և արտահանման համար։",
       cta1: "Դառնալ գործընկեր",
       cta2: "Ամրագրել այց",
     },
     about: {
       title: "Մեր մասին",
       headline: "Մեր արմատները բնության մեջ են, մեր ընթացքը՝ տեխնոլոգիայի։",
-      text1: "Մենք վերափոխում ենք հողատարածքը ժամանակակից, բարձր տեխնոլոգիական այգու, որտեղ յուրաքանչյուր ծառ խնամվում է ընտանեկան հոգատարությամբ։ Մեր նպատակն է ստեղծել էկոլոգիապես մաքուր միջավայր և աճեցնել լավագույն որակի թուզ, որը կներկայացնի մեր երկրի համն ու հոտը միջազգային շուկայում։",
+      text1: "Մենք վերափոխում ենք հողատարածքը ժամանակակից, բարձր տեխնոլոգիական այգու, որտեղ յուրաքանչյուր ծառ խնամվում է ընտանեկան հոգատարությամբ։ Մեր նպատակն է ստեղծել էկոլոգիապես մաքուր միջավայր և աճեցնել լավագույն որակի մրգեր, որոնք կներկայացնեն մեր երկրի համն ու հոտը միջազգային շուկայում։",
       text2: "Այն ամենը, ինչ դուք տեսնում եք՝ փարթամ կանաչ դաշտերից մինչև նորարարական գյուղատնտեսական տեխնիկաներ, պարզապես հնարավորությունների օրինակ է։ Մենք հավատում ենք, որ գյուղատնտեսությունը սերմից շատ ավելին է։ Այն հոգատարություն է, կայունություն և պատասխանատվություն ապագայի հանդեպ։",
     },
     products: {
@@ -66,7 +66,7 @@ const translations = {
           bullets: ["Սանիտարական և ձևավորող էտ", "Վնասված և հին ճյուղերի հեռացում", "Կանխարգելիչ պաշտպանություն", "Կաթիլային ոռոգման համակարգի ստուգում"],
         },
         {
-          title: "2. Վեգետացիայի սկիզկբ (մարտ-ապրիլ)",
+          title: "2. Վեգետացիայի սկիզբ (մարտ-ապրիլ)",
           bullets: ["Սեզոնային սնուցման ապահովում", "Կանոնավոր ոռոգման մեկնարկ", "Հողի վիճակի վերահսկում", "Նոր աճի և տերևային զանգվածի վերահսկում"],
         },
         {
@@ -198,14 +198,14 @@ const translations = {
     ],
     hero: {
       title: "Innovation and nature in one garden",
-      lead: "A family business that combines traditional values and modern agricultural solutions, ensuring high-quality organic figs for the domestic market and for export.",
+      lead: "A family business that combines traditional values and modern agricultural solutions, ensuring high-quality organic fruits for the domestic market and for export.",
       cta1: "Become a Partner",
       cta2: "Book a Visit",
     },
     about: {
       title: "About",
       headline: "Our roots are in nature, our path is in technology.",
-      text1: "We are transforming the land into a modern, high-tech garden where each tree is cared for with family-like attention. Our goal is to create an ecologically clean environment and grow the best quality figs that will represent the flavor and aroma of our country in the international market.",
+      text1: "We are transforming the land into a modern, high-tech garden where each tree is cared for with family-like attention. Our goal is to create an ecologically clean environment and grow the best quality fruits that will represent the flavor and aroma of our country in the international market.",
       text2: "Everything you see, from the lush green fields to innovative agricultural techniques, is just an example of possibilities. We believe that agriculture is much more than a seed. It is care, sustainability, and responsibility towards the future.",
     },
     products: {
@@ -373,14 +373,14 @@ const translations = {
     ],
     hero: {
       title: "Инновации и природа в одном саду",
-      lead: "Семейный бизнес, объединяющий традиционные ценности и современные агротехнические решения, обеспечивающий высококачественный органический инжир для внутреннего рынка и на экспорт.",
+      lead: "Семейный бизнес, объединяющий традиционные ценности и современные агротехнические решения, обеспечивающий высококачественные органические фрукты для внутреннего рынка и на экспорт.",
       cta1: "Стать партнером",
       cta2: "Забронировать визит",
     },
     about: {
       title: "О нас",
       headline: "Наши корни - в природе, наш путь - в технологиях.",
-      text1: "Мы преобразуем землю в современный, высокотехнологичный сад, где за каждым деревом ухаживают с семейной заботой. Наша цель - создать экологически чистую среду и вырастить инжир наилучшего качества, который представит вкус и аромат нашей страны на международном рынке.",
+      text1: "Мы преобразуем землю в современный, высокотехнологичный сад, где за каждым деревом ухаживают с семейной заботой. Наша цель - создать экологически чистую среду и вырастить фрукты наилучшего качества, которые представят вкус и аромат нашей страны на международном рынке.",
       text2: "Все, что вы видите - от пышных зеленых полей до инновационных агротехник, - это лишь пример возможностей. Мы верим, что сельское хозяйство - это нечто гораздо большее, чем просто семя. Это забота, устойчивость и ответственность перед будущим.",
     },
     products: {

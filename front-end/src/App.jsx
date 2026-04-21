@@ -155,6 +155,9 @@ const translations = {
       errors: {
         invalid: "Սխալ էլ-հասցե կամ գաղտնաբառ։",
         validation: "Խնդրում ենք լրացնել երկու դաշտերն էլ ճիշտ ձևաչափով։",
+        requiredEmail: "Խնդրում ենք մուտքագրել էլ-հասցեն։",
+        requiredPassword: "Խնդրում ենք մուտքագրել գաղտնաբառը։",
+        invalidEmail: "Խնդրում ենք մուտքագրել վավեր էլ-հասցե։",
         generic: "Մուտքը հիմա հասանելի չէ։ Կրկին փորձեք։",
         network: "Չհաջողվեց կապ հաստատել սերվերի հետ։",
       },
@@ -181,6 +184,13 @@ const translations = {
       login: "Մուտք գործել",
       errors: {
         validation: "Խնդրում ենք լրացնել բոլոր դաշտերը ճիշտ ձևաչափով։",
+        requiredName: "Խնդրում ենք մուտքագրել անունը։",
+        requiredCompanyName: "Խնդրում ենք մուտքագրել ընկերության անվանումը։",
+        requiredEmail: "Խնդրում ենք մուտքագրել էլ-հասցեն։",
+        requiredPhone: "Խնդրում ենք մուտքագրել հեռախոսահամարը։",
+        requiredPassword: "Խնդրում ենք մուտքագրել գաղտնաբառը։",
+        requiredConfirmPassword: "Խնդրում ենք կրկնել գաղտնաբառը։",
+        invalidEmail: "Խնդրում ենք մուտքագրել վավեր էլ-հասցե։",
         passwordMismatch: "Գաղտնաբառերը չեն համընկնում։",
         generic: "Գրանցումն այժմ հասանելի չէ։ Կրկին փորձեք։",
         network: "Չհաջողվեց կապ հաստատել սերվերի հետ։",
@@ -330,6 +340,9 @@ const translations = {
       errors: {
         invalid: "Invalid email or password.",
         validation: "Please enter a valid email and password.",
+        requiredEmail: "Please enter your email.",
+        requiredPassword: "Please enter your password.",
+        invalidEmail: "Please enter a valid email address.",
         generic: "Login is unavailable right now. Please try again.",
         network: "Could not connect to the server.",
       },
@@ -356,6 +369,13 @@ const translations = {
       login: "Log In",
       errors: {
         validation: "Please fill in all fields with valid values.",
+        requiredName: "Please enter your name.",
+        requiredCompanyName: "Please enter your company name.",
+        requiredEmail: "Please enter your email.",
+        requiredPhone: "Please enter your phone number.",
+        requiredPassword: "Please enter your password.",
+        requiredConfirmPassword: "Please confirm your password.",
+        invalidEmail: "Please enter a valid email address.",
         passwordMismatch: "Passwords do not match.",
         generic: "Registration is unavailable right now. Please try again.",
         network: "Could not connect to the server.",
@@ -505,6 +525,9 @@ const translations = {
       errors: {
         invalid: "Неверная почта или пароль.",
         validation: "Введите корректные почту и пароль.",
+        requiredEmail: "Пожалуйста, введите эл. почту.",
+        requiredPassword: "Пожалуйста, введите пароль.",
+        invalidEmail: "Пожалуйста, введите корректный email.",
         generic: "Сейчас вход недоступен. Попробуйте снова.",
         network: "Не удалось подключиться к серверу.",
       },
@@ -531,6 +554,13 @@ const translations = {
       login: "Войти",
       errors: {
         validation: "Заполните все поля корректными значениями.",
+        requiredName: "Пожалуйста, введите имя.",
+        requiredCompanyName: "Пожалуйста, введите название компании.",
+        requiredEmail: "Пожалуйста, введите эл. почту.",
+        requiredPhone: "Пожалуйста, введите номер телефона.",
+        requiredPassword: "Пожалуйста, введите пароль.",
+        requiredConfirmPassword: "Пожалуйста, повторите пароль.",
+        invalidEmail: "Пожалуйста, введите корректный email.",
         passwordMismatch: "Пароли не совпадают.",
         generic: "Сейчас регистрация недоступна. Попробуйте снова.",
         network: "Не удалось подключиться к серверу.",
@@ -930,6 +960,147 @@ const dashboardTranslations = {
   },
 };
 
+const apiErrorLocalization = {
+  AM: {
+    exact: {
+      "could not validate credentials.": "Չհաջողվեց վավերացնել տվյալները։",
+      "admin access required.": "Պահանջվում է ադմինի հասանելիություն։",
+      "user with this email already exists.": "Այս էլ-հասցեով օգտատեր արդեն գոյություն ունի։",
+      "incorrect email or password.": "Սխալ էլ-հասցե կամ գաղտնաբառ։",
+      "product not found.": "Ապրանքը չի գտնվել։",
+      "transaction not found.": "Գործարքը չի գտնվել։",
+      "booking not found.": "Ամրագրումը չի գտնվել։",
+      "requested quantity exceeds available product quantity.": "Պահանջվող քանակը գերազանցում է հասանելի քանակը։",
+      "only pending transactions can be deleted.": "Միայն սպասման մեջ գտնվող գործարքները կարելի է ջնջել։",
+      "booking limit for this day has been reached.": "Այս օրվա համար ամրագրումների սահմանաչափը լրացել է։",
+      "name must not be empty.": "Անունը չպետք է դատարկ լինի։",
+      "field must not be empty.": "Դաշտը չպետք է դատարկ լինի։",
+      "password must not be empty.": "Գաղտնաբառը չպետք է դատարկ լինի։",
+      "phone must be a valid phone number.": "Հեռախոսահամարը պետք է լինի վավեր։",
+      "product type is required.": "Խնդրում ենք մուտքագրել ապրանքի անվանումը։",
+      "quantity is required.": "Խնդրում ենք մուտքագրել ճիշտ քանակ։",
+      "product type must not be empty.": "Ապրանքի անվանումը չպետք է դատարկ լինի։",
+      "price is required.": "Խնդրում ենք մուտքագրել ճիշտ գինը։",
+      "product deleted successfully.": "Ապրանքը հաջողությամբ ջնջվել է։",
+      "booking deleted successfully.": "Ամրագրումը հաջողությամբ ջնջվել է։",
+      "logged out successfully.": "Դուք հաջողությամբ դուրս եկաք համակարգից։",
+      "field required": "Դաշտը պարտադիր է։",
+      "input should be a valid string": "Մուտքագրված արժեքը պետք է լինի տեքստ։",
+      "input should be a valid number": "Մուտքագրված արժեքը պետք է լինի թիվ։",
+      "input should be a valid integer": "Մուտքագրված արժեքը պետք է լինի ամբողջ թիվ։",
+      "input should be a valid datetime": "Մուտքագրված ամսաթիվը պետք է լինի վավեր։",
+      "input should be a valid date": "Մուտքագրված ամսաթիվը պետք է լինի վավեր։",
+      "value is not a valid email address": "Մուտքագրեք վավեր էլ-հասցե։",
+      "request failed": "Հարցումը չհաջողվեց։",
+    },
+    templates: {
+      minTransactionQuantity: (value) => `Գործարքի նվազագույն քանակը ${value} է։`,
+      greaterThanOrEqual: (value) => `Արժեքը պետք է մեծ կամ հավասար լինի ${value}-ին։`,
+      greaterThan: (value) => `Արժեքը պետք է մեծ լինի ${value}-ից։`,
+      lessThanOrEqual: (value) => `Արժեքը պետք է փոքր կամ հավասար լինի ${value}-ին։`,
+      lessThan: (value) => `Արժեքը պետք է փոքր լինի ${value}-ից։`,
+      stringMin: (value) => `Տեքստը պետք է պարունակի առնվազն ${value} նիշ։`,
+      stringMax: (value) => `Տեքստը պետք է պարունակի առավելագույնը ${value} նիշ։`,
+      invalidNumber: "Մուտքագրեք վավեր թիվ։",
+      invalidInteger: "Մուտքագրեք վավեր ամբողջ թիվ։",
+      invalidDateTime: "Մուտքագրեք վավեր ամսաթիվ։",
+      invalidEmail: "Մուտքագրեք վավեր էլ-հասցե։",
+    },
+  },
+  EN: {
+    exact: {
+      "could not validate credentials.": "Could not validate credentials.",
+      "admin access required.": "Admin access required.",
+      "user with this email already exists.": "User with this email already exists.",
+      "incorrect email or password.": "Incorrect email or password.",
+      "product not found.": "Product not found.",
+      "transaction not found.": "Transaction not found.",
+      "booking not found.": "Booking not found.",
+      "requested quantity exceeds available product quantity.": "Requested quantity exceeds available product quantity.",
+      "only pending transactions can be deleted.": "Only pending transactions can be deleted.",
+      "booking limit for this day has been reached.": "Booking limit for this day has been reached.",
+      "name must not be empty.": "Name must not be empty.",
+      "field must not be empty.": "Field must not be empty.",
+      "password must not be empty.": "Password must not be empty.",
+      "phone must be a valid phone number.": "Phone must be a valid phone number.",
+      "product type is required.": "Please enter a product name.",
+      "quantity is required.": "Please enter a valid quantity.",
+      "product type must not be empty.": "Product type must not be empty.",
+      "price is required.": "Please enter a valid price.",
+      "product deleted successfully.": "Product deleted successfully.",
+      "booking deleted successfully.": "Booking deleted successfully.",
+      "logged out successfully.": "Logged out successfully.",
+      "field required": "Field required.",
+      "input should be a valid string": "Input should be a valid string.",
+      "input should be a valid number": "Input should be a valid number.",
+      "input should be a valid integer": "Input should be a valid integer.",
+      "input should be a valid datetime": "Input should be a valid datetime.",
+      "input should be a valid date": "Input should be a valid date.",
+      "value is not a valid email address": "Please enter a valid email address.",
+      "request failed": "Request failed.",
+    },
+    templates: {
+      minTransactionQuantity: (value) => `Minimum transaction quantity is ${value}.`,
+      greaterThanOrEqual: (value) => `Value must be greater than or equal to ${value}.`,
+      greaterThan: (value) => `Value must be greater than ${value}.`,
+      lessThanOrEqual: (value) => `Value must be less than or equal to ${value}.`,
+      lessThan: (value) => `Value must be less than ${value}.`,
+      stringMin: (value) => `Text must contain at least ${value} characters.`,
+      stringMax: (value) => `Text must contain at most ${value} characters.`,
+      invalidNumber: "Please enter a valid number.",
+      invalidInteger: "Please enter a valid integer.",
+      invalidDateTime: "Please enter a valid date.",
+      invalidEmail: "Please enter a valid email address.",
+    },
+  },
+  RU: {
+    exact: {
+      "could not validate credentials.": "Не удалось проверить учетные данные.",
+      "admin access required.": "Требуется доступ администратора.",
+      "user with this email already exists.": "Пользователь с таким email уже существует.",
+      "incorrect email or password.": "Неверный email или пароль.",
+      "product not found.": "Продукт не найден.",
+      "transaction not found.": "Транзакция не найдена.",
+      "booking not found.": "Бронирование не найдено.",
+      "requested quantity exceeds available product quantity.": "Запрошенное количество превышает доступное количество продукта.",
+      "only pending transactions can be deleted.": "Удалять можно только транзакции со статусом ожидания.",
+      "booking limit for this day has been reached.": "Лимит бронирований на этот день уже достигнут.",
+      "name must not be empty.": "Имя не должно быть пустым.",
+      "field must not be empty.": "Поле не должно быть пустым.",
+      "password must not be empty.": "Пароль не должен быть пустым.",
+      "phone must be a valid phone number.": "Телефон должен быть корректным.",
+      "product type is required.": "Введите название продукта.",
+      "quantity is required.": "Введите корректное количество.",
+      "product type must not be empty.": "Название продукта не должно быть пустым.",
+      "price is required.": "Введите корректную цену.",
+      "product deleted successfully.": "Продукт успешно удален.",
+      "booking deleted successfully.": "Бронирование успешно удалено.",
+      "logged out successfully.": "Вы успешно вышли из системы.",
+      "field required": "Поле обязательно.",
+      "input should be a valid string": "Значение должно быть корректной строкой.",
+      "input should be a valid number": "Введите корректное число.",
+      "input should be a valid integer": "Введите корректное целое число.",
+      "input should be a valid datetime": "Введите корректную дату.",
+      "input should be a valid date": "Введите корректную дату.",
+      "value is not a valid email address": "Введите корректный email.",
+      "request failed": "Запрос не выполнен.",
+    },
+    templates: {
+      minTransactionQuantity: (value) => `Минимальное количество для транзакции — ${value}.`,
+      greaterThanOrEqual: (value) => `Значение должно быть больше или равно ${value}.`,
+      greaterThan: (value) => `Значение должно быть больше ${value}.`,
+      lessThanOrEqual: (value) => `Значение должно быть меньше или равно ${value}.`,
+      lessThan: (value) => `Значение должно быть меньше ${value}.`,
+      stringMin: (value) => `Текст должен содержать не менее ${value} символов.`,
+      stringMax: (value) => `Текст должен содержать не более ${value} символов.`,
+      invalidNumber: "Введите корректное число.",
+      invalidInteger: "Введите корректное целое число.",
+      invalidDateTime: "Введите корректную дату.",
+      invalidEmail: "Введите корректный email.",
+    },
+  },
+};
+
 const fruitAssets = {
   fig: {
     aboutImage: "/assets/photos/about-fig-box.jpg",
@@ -1252,7 +1423,7 @@ function HomePage({ currentLanguage, onLanguageSelect }) {
       }
 
       if (!response.ok) {
-        throw new Error(resolveApiDetailMessage(data?.detail, t.booking.errors.generic));
+        throw createApiError(response.status, data);
       }
 
       setVisitorName("");
@@ -1269,7 +1440,7 @@ function HomePage({ currentLanguage, onLanguageSelect }) {
       if (error instanceof TypeError) {
         setBookingErrorMessage(t.booking.errors.network);
       } else {
-        setBookingErrorMessage(resolveApiErrorMessage(error, t.booking.errors.generic));
+        setBookingErrorMessage(resolveApiErrorMessage(error, currentLanguage, t.booking.errors.generic));
       }
     } finally {
       setIsBookingSubmitting(false);
@@ -1744,6 +1915,30 @@ function LoginPage({ currentLanguage }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const trimmedEmail = email.trim();
+    const trimmedPassword = password.trim();
+
+    if (!trimmedEmail) {
+      setErrorMessage(t.login.errors.requiredEmail);
+      setSuccessMessage("");
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!isValidEmailAddress(trimmedEmail)) {
+      setErrorMessage(t.login.errors.invalidEmail);
+      setSuccessMessage("");
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!trimmedPassword) {
+      setErrorMessage(t.login.errors.requiredPassword);
+      setSuccessMessage("");
+      setIsSubmitting(false);
+      return;
+    }
+
     setIsSubmitting(true);
     setErrorMessage("");
     setSuccessMessage("");
@@ -1755,7 +1950,7 @@ function LoginPage({ currentLanguage }) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email,
+          email: trimmedEmail,
           password,
         }),
       });
@@ -1763,7 +1958,7 @@ function LoginPage({ currentLanguage }) {
       const payload = await response.json().catch(() => ({}));
 
       if (!response.ok) {
-        setErrorMessage(resolveLoginError(response.status, payload, t.login.errors));
+        setErrorMessage(resolveLoginError(response.status, payload, currentLanguage, t.login.errors));
         setIsSubmitting(false);
         return;
       }
@@ -1806,7 +2001,7 @@ function LoginPage({ currentLanguage }) {
           <p className="login-card__subtitle">{t.login.subtitle}</p>
         </div>
 
-        <form className="login-card__form" onSubmit={handleSubmit}>
+        <form className="login-card__form" onSubmit={handleSubmit} noValidate>
           <div className="login-card__field">
             <label className="login-card__label" htmlFor="email">
               {t.login.emailLabel}
@@ -1818,9 +2013,12 @@ function LoginPage({ currentLanguage }) {
               autoComplete="email"
               placeholder={t.login.emailPlaceholder}
               value={email}
-              onChange={(event) => setEmail(event.target.value)}
+              onChange={(event) => {
+                setEmail(event.target.value);
+                setErrorMessage("");
+                setSuccessMessage("");
+              }}
               disabled={isSubmitting}
-              required
             />
           </div>
 
@@ -1836,9 +2034,12 @@ function LoginPage({ currentLanguage }) {
                 autoComplete="current-password"
                 placeholder={t.login.passwordPlaceholder}
                 value={password}
-                onChange={(event) => setPassword(event.target.value)}
+                onChange={(event) => {
+                  setPassword(event.target.value);
+                  setErrorMessage("");
+                  setSuccessMessage("");
+                }}
                 disabled={isSubmitting}
-                required
               />
               <button
                 className="login-card__password-toggle"
@@ -1938,10 +2139,53 @@ function RegisterPage({ currentLanguage }) {
       ...current,
       [field]: event.target.value,
     }));
+    setErrorMessage("");
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const trimmedName = formData.name.trim();
+    const trimmedCompanyName = formData.companyName.trim();
+    const trimmedEmail = formData.email.trim();
+    const trimmedPhone = formData.phone.trim();
+    const trimmedPassword = formData.password.trim();
+    const trimmedConfirmPassword = formData.confirmPassword.trim();
+
+    if (!trimmedName) {
+      setErrorMessage(t.register.errors.requiredName);
+      return;
+    }
+
+    if (!trimmedCompanyName) {
+      setErrorMessage(t.register.errors.requiredCompanyName);
+      return;
+    }
+
+    if (!trimmedEmail) {
+      setErrorMessage(t.register.errors.requiredEmail);
+      return;
+    }
+
+    if (!isValidEmailAddress(trimmedEmail)) {
+      setErrorMessage(t.register.errors.invalidEmail);
+      return;
+    }
+
+    if (!trimmedPhone) {
+      setErrorMessage(t.register.errors.requiredPhone);
+      return;
+    }
+
+    if (!trimmedPassword) {
+      setErrorMessage(t.register.errors.requiredPassword);
+      return;
+    }
+
+    if (!trimmedConfirmPassword) {
+      setErrorMessage(t.register.errors.requiredConfirmPassword);
+      return;
+    }
+
     setIsSubmitting(true);
     setErrorMessage("");
 
@@ -1958,18 +2202,18 @@ function RegisterPage({ currentLanguage }) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
+          name: trimmedName,
+          email: trimmedEmail,
           password: formData.password,
-          phone: formData.phone,
-          company_name: formData.companyName,
+          phone: trimmedPhone,
+          company_name: trimmedCompanyName,
         }),
       });
 
       const payload = await response.json().catch(() => ({}));
 
       if (!response.ok) {
-        setErrorMessage(resolveRegisterError(response.status, payload, t.register.errors));
+        setErrorMessage(resolveRegisterError(response.status, payload, currentLanguage, t.register.errors));
         setIsSubmitting(false);
         return;
       }
@@ -2001,7 +2245,7 @@ function RegisterPage({ currentLanguage }) {
           <p className="login-card__subtitle">{t.register.subtitle}</p>
         </div>
 
-        <form className="register-card__form" onSubmit={handleSubmit}>
+        <form className="register-card__form" onSubmit={handleSubmit} noValidate>
           <div className="register-card__grid">
             <div className="register-card__field">
               <label className="login-card__label" htmlFor="register-name">
@@ -2016,7 +2260,6 @@ function RegisterPage({ currentLanguage }) {
                 value={formData.name}
                 onChange={updateField("name")}
                 disabled={isSubmitting}
-                required
               />
             </div>
 
@@ -2033,7 +2276,6 @@ function RegisterPage({ currentLanguage }) {
                 value={formData.companyName}
                 onChange={updateField("companyName")}
                 disabled={isSubmitting}
-                required
               />
             </div>
 
@@ -2050,7 +2292,6 @@ function RegisterPage({ currentLanguage }) {
                 value={formData.email}
                 onChange={updateField("email")}
                 disabled={isSubmitting}
-                required
               />
             </div>
 
@@ -2068,7 +2309,6 @@ function RegisterPage({ currentLanguage }) {
                   value={formData.password}
                   onChange={updateField("password")}
                   disabled={isSubmitting}
-                  required
                 />
                 <button
                   className="login-card__password-toggle"
@@ -2094,7 +2334,6 @@ function RegisterPage({ currentLanguage }) {
                 value={formData.phone}
                 onChange={updateField("phone")}
                 disabled={isSubmitting}
-                required
               />
             </div>
 
@@ -2112,7 +2351,6 @@ function RegisterPage({ currentLanguage }) {
                   value={formData.confirmPassword}
                   onChange={updateField("confirmPassword")}
                   disabled={isSubmitting}
-                  required
                 />
                 <button
                   className="login-card__password-toggle"
@@ -2266,7 +2504,7 @@ function UserDashboardPage({ currentLanguage, onLanguageSelect }) {
         setTransactionsState({
           data: [],
           isLoading: false,
-          error: resolveDashboardError(error, dashboardText.errors.transactions),
+          error: resolveDashboardError(error, currentLanguage, dashboardText.errors.transactions),
         });
       });
 
@@ -2326,7 +2564,7 @@ function UserDashboardPage({ currentLanguage, onLanguageSelect }) {
         setFinancesState({
           data: [],
           isLoading: false,
-          error: resolveDashboardError(error, dashboardText.errors.finances),
+          error: resolveDashboardError(error, currentLanguage, dashboardText.errors.finances),
         });
       });
 
@@ -2382,7 +2620,7 @@ function UserDashboardPage({ currentLanguage, onLanguageSelect }) {
         setProductOptionsState({
           data: [],
           isLoading: false,
-          error: resolveDashboardError(error, dashboardText.errors.products),
+          error: resolveDashboardError(error, currentLanguage, dashboardText.errors.products),
         });
       });
 
@@ -2496,7 +2734,7 @@ function UserDashboardPage({ currentLanguage, onLanguageSelect }) {
         return;
       }
 
-      setCreateTransactionError(resolveDashboardError(error, dashboardText.errors.createTransaction));
+      setCreateTransactionError(resolveDashboardError(error, currentLanguage, dashboardText.errors.createTransaction));
     } finally {
       setIsCreatingTransaction(false);
     }
@@ -2534,7 +2772,7 @@ function UserDashboardPage({ currentLanguage, onLanguageSelect }) {
         return false;
       }
 
-      setDeleteTransactionError(resolveDashboardError(error, dashboardText.errors.deleteTransaction));
+      setDeleteTransactionError(resolveDashboardError(error, currentLanguage, dashboardText.errors.deleteTransaction));
       return false;
     } finally {
       setDeletingTransactionId(null);
@@ -2558,7 +2796,7 @@ function UserDashboardPage({ currentLanguage, onLanguageSelect }) {
         return;
       }
 
-      setLogoutError(resolveDashboardError(error, dashboardText.errors.logout));
+      setLogoutError(resolveDashboardError(error, currentLanguage, dashboardText.errors.logout));
     } finally {
       setIsLoggingOut(false);
     }
@@ -3068,7 +3306,7 @@ function DashboardCreateTransactionModal({
           </button>
         </div>
 
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} noValidate>
           <div className="modal-body">
             <div className="modal-section">
               <label className="modal-label" htmlFor="dashboard-product-id">
@@ -3483,7 +3721,7 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
         setTransactionsState({
           data: [],
           isLoading: false,
-          error: resolveDashboardError(error, dashboardText.errors.transactions),
+          error: resolveDashboardError(error, currentLanguage, dashboardText.errors.transactions),
         });
       });
 
@@ -3548,7 +3786,7 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
         setProductsState({
           data: [],
           isLoading: false,
-          error: resolveDashboardError(error, dashboardText.errors.products),
+          error: resolveDashboardError(error, currentLanguage, dashboardText.errors.products),
         });
       });
 
@@ -3613,7 +3851,7 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
         setTourismState({
           data: [],
           isLoading: false,
-          error: resolveDashboardError(error, dashboardText.errors.tourism),
+          error: resolveDashboardError(error, currentLanguage, dashboardText.errors.tourism),
         });
       });
 
@@ -3683,7 +3921,7 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
         setAdminFinancesState({
           data: [],
           isLoading: false,
-          error: resolveDashboardError(error, dashboardText.errors.finances),
+          error: resolveDashboardError(error, currentLanguage, dashboardText.errors.finances),
         });
       });
 
@@ -3744,7 +3982,7 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
         return null;
       }
 
-      setTransactionActionError(resolveDashboardError(error, dashboardText.errors.updateTransaction));
+      setTransactionActionError(resolveDashboardError(error, currentLanguage, dashboardText.errors.updateTransaction));
       return null;
     }
   };
@@ -3782,7 +4020,7 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
         return null;
       }
 
-      setProductActionError(resolveDashboardError(error, dashboardText.errors.updateProduct));
+      setProductActionError(resolveDashboardError(error, currentLanguage, dashboardText.errors.updateProduct));
       return null;
     }
   };
@@ -3811,7 +4049,7 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
         return false;
       }
 
-      setProductActionError(resolveDashboardError(error, dashboardText.errors.deleteProduct));
+      setProductActionError(resolveDashboardError(error, currentLanguage, dashboardText.errors.deleteProduct));
       return false;
     }
   };
@@ -3840,7 +4078,7 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
         return false;
       }
 
-      setBookingActionError(resolveDashboardError(error, dashboardText.errors.deleteBooking));
+      setBookingActionError(resolveDashboardError(error, currentLanguage, dashboardText.errors.deleteBooking));
       return false;
     }
   };
@@ -3876,20 +4114,22 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
     event.preventDefault();
 
     const trimmedProductType = createProductForm.productType.trim();
-    const quantity = Number(createProductForm.quantity);
-    const price = Number(createProductForm.price);
+    const trimmedQuantity = String(createProductForm.quantity || "").trim();
+    const trimmedPrice = String(createProductForm.price || "").trim();
+    const quantity = Number(trimmedQuantity);
+    const price = Number(trimmedPrice);
 
     if (!trimmedProductType) {
       setCreateProductError(dashboardText.errors.productNameRequired);
       return;
     }
 
-    if (!Number.isFinite(quantity) || quantity < 0) {
+    if (!trimmedQuantity || !Number.isFinite(quantity) || quantity < 0) {
       setCreateProductError(dashboardText.errors.quantityRequired);
       return;
     }
 
-    if (!Number.isFinite(price) || price < 0) {
+    if (!trimmedPrice || !Number.isFinite(price) || price < 0) {
       setCreateProductError(dashboardText.errors.priceRequired);
       return;
     }
@@ -3935,7 +4175,7 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
         return;
       }
 
-      setCreateProductError(resolveDashboardError(error, dashboardText.errors.createProduct));
+      setCreateProductError(resolveDashboardError(error, currentLanguage, dashboardText.errors.createProduct));
     } finally {
       setIsCreatingProduct(false);
     }
@@ -3958,7 +4198,7 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
         return;
       }
 
-      setLogoutError(resolveDashboardError(error, dashboardText.errors.logout));
+      setLogoutError(resolveDashboardError(error, currentLanguage, dashboardText.errors.logout));
     } finally {
       setIsLoggingOut(false);
     }
@@ -5472,7 +5712,7 @@ function AdminDashboardProductModal({
           </button>
         </div>
 
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} noValidate>
           <div className="modal-body dashboard-modal__grid">
             <div className="modal-section">
               <label className="modal-label" htmlFor="admin-product-name">
@@ -5597,7 +5837,108 @@ function getInitialLanguage() {
   return SUPPORTED_LANGUAGES.includes(storedLanguage) ? storedLanguage : "AM";
 }
 
-function resolveLoginError(statusCode, payload, messages) {
+function normalizeApiErrorMessage(message) {
+  return String(message || "")
+    .trim()
+    .replace(/\s+/g, " ");
+}
+
+function getApiErrorLocalization(language) {
+  return apiErrorLocalization[language] || apiErrorLocalization.EN;
+}
+
+function translateApiErrorMessage(message, language) {
+  const normalizedMessage = normalizeApiErrorMessage(message);
+
+  if (!normalizedMessage) {
+    return "";
+  }
+
+  const localization = getApiErrorLocalization(language);
+  const lowerMessage = normalizedMessage.toLowerCase();
+
+  if (localization.exact[lowerMessage]) {
+    return localization.exact[lowerMessage];
+  }
+
+  const valueErrorMatch = normalizedMessage.match(/^value error,\s*(.+)$/i);
+  if (valueErrorMatch) {
+    return translateApiErrorMessage(valueErrorMatch[1], language);
+  }
+
+  const minTransactionQuantityMatch = normalizedMessage.match(/^minimum transaction quantity is ([\d.]+)\.?$/i);
+  if (minTransactionQuantityMatch) {
+    return localization.templates.minTransactionQuantity(minTransactionQuantityMatch[1]);
+  }
+
+  const greaterThanOrEqualMatch = normalizedMessage.match(
+    /^(?:input|value) should be greater than or equal to ([\d.]+)\.?$/i,
+  );
+  if (greaterThanOrEqualMatch) {
+    return localization.templates.greaterThanOrEqual(greaterThanOrEqualMatch[1]);
+  }
+
+  const greaterThanMatch = normalizedMessage.match(/^(?:input|value) should be greater than ([\d.]+)\.?$/i);
+  if (greaterThanMatch) {
+    return localization.templates.greaterThan(greaterThanMatch[1]);
+  }
+
+  const lessThanOrEqualMatch = normalizedMessage.match(/^(?:input|value) should be less than or equal to ([\d.]+)\.?$/i);
+  if (lessThanOrEqualMatch) {
+    return localization.templates.lessThanOrEqual(lessThanOrEqualMatch[1]);
+  }
+
+  const lessThanMatch = normalizedMessage.match(/^(?:input|value) should be less than ([\d.]+)\.?$/i);
+  if (lessThanMatch) {
+    return localization.templates.lessThan(lessThanMatch[1]);
+  }
+
+  const stringMinMatch = normalizedMessage.match(/^string should have at least (\d+) characters?$/i);
+  if (stringMinMatch) {
+    return localization.templates.stringMin(stringMinMatch[1]);
+  }
+
+  const stringMaxMatch = normalizedMessage.match(/^string should have at most (\d+) characters?$/i);
+  if (stringMaxMatch) {
+    return localization.templates.stringMax(stringMaxMatch[1]);
+  }
+
+  if (/value is not a valid email address/i.test(normalizedMessage)) {
+    return localization.templates.invalidEmail;
+  }
+
+  if (/input should be a valid number/i.test(normalizedMessage) || /unable to parse string as a number/i.test(normalizedMessage)) {
+    return localization.templates.invalidNumber;
+  }
+
+  if (/input should be a valid integer/i.test(normalizedMessage) || /unable to parse string as an integer/i.test(normalizedMessage)) {
+    return localization.templates.invalidInteger;
+  }
+
+  if (/input should be a valid datetime/i.test(normalizedMessage) || /input should be a valid date/i.test(normalizedMessage)) {
+    return localization.templates.invalidDateTime;
+  }
+
+  return "";
+}
+
+function createApiError(status, payload) {
+  const rawMessage = typeof payload?.detail === "string" ? payload.detail : "";
+  const error = new Error(rawMessage || "Request failed");
+  error.status = status;
+  error.payload = payload;
+  error.detail = payload?.detail;
+  error.rawMessage = rawMessage;
+  return error;
+}
+
+function resolveLoginError(statusCode, payload, language, messages) {
+  const translatedDetail = resolveApiDetailMessage(payload?.detail, language, "");
+
+  if (translatedDetail) {
+    return translatedDetail;
+  }
+
   if (statusCode === 401) {
     return messages.invalid;
   }
@@ -5606,20 +5947,18 @@ function resolveLoginError(statusCode, payload, messages) {
     return messages.validation;
   }
 
-  if (typeof payload?.detail === "string" && payload.detail.trim()) {
-    return payload.detail;
-  }
-
   return messages.generic;
 }
 
-function resolveRegisterError(statusCode, payload, messages) {
-  if (statusCode === 422) {
-    return messages.validation;
+function resolveRegisterError(statusCode, payload, language, messages) {
+  const translatedDetail = resolveApiDetailMessage(payload?.detail, language, "");
+
+  if (translatedDetail) {
+    return translatedDetail;
   }
 
-  if (typeof payload?.detail === "string" && payload.detail.trim()) {
-    return payload.detail;
+  if (statusCode === 422) {
+    return messages.validation;
   }
 
   return messages.generic;
@@ -5640,10 +5979,7 @@ function fetchAuthenticatedJson(path, session, signal, init = {}) {
     const payload = await response.json().catch(() => ({}));
 
     if (!response.ok) {
-      const error = new Error(typeof payload?.detail === "string" ? payload.detail : "Request failed");
-      error.status = response.status;
-      error.payload = payload;
-      throw error;
+      throw createApiError(response.status, payload);
     }
 
     return payload;
@@ -5811,28 +6147,30 @@ function getDashboardStatusLabel(status, labels) {
   return labels[status] || status;
 }
 
-function resolveDashboardError(error, fallbackMessage) {
-  if (typeof error?.message === "string" && error.message.trim()) {
-    return error.message;
+function resolveDashboardError(error, language, fallbackMessage) {
+  const localizedMessage = resolveApiErrorMessage(error, language, "");
+
+  if (localizedMessage) {
+    return localizedMessage;
   }
 
   return fallbackMessage;
 }
 
-function resolveApiDetailMessage(detail, fallbackMessage) {
+function resolveApiDetailMessage(detail, language, fallbackMessage) {
   if (typeof detail === "string" && detail.trim()) {
-    return detail;
+    return translateApiErrorMessage(detail, language) || fallbackMessage;
   }
 
   if (Array.isArray(detail)) {
     const messages = detail
       .map((item) => {
         if (typeof item === "string" && item.trim()) {
-          return item.trim();
+          return translateApiErrorMessage(item, language);
         }
 
         if (typeof item?.msg === "string" && item.msg.trim()) {
-          return item.msg.trim();
+          return translateApiErrorMessage(item.msg, language);
         }
 
         return "";
@@ -5847,9 +6185,15 @@ function resolveApiDetailMessage(detail, fallbackMessage) {
   return fallbackMessage;
 }
 
-function resolveApiErrorMessage(error, fallbackMessage) {
+function resolveApiErrorMessage(error, language, fallbackMessage) {
+  const localizedDetail = resolveApiDetailMessage(error?.detail ?? error?.payload?.detail, language, "");
+
+  if (localizedDetail) {
+    return localizedDetail;
+  }
+
   if (typeof error?.message === "string" && error.message.trim()) {
-    return error.message;
+    return translateApiErrorMessage(error.message, language) || fallbackMessage;
   }
 
   return fallbackMessage;
@@ -5872,6 +6216,10 @@ function serializeBookingVisitDate(date) {
 function getAvatarInitial(name) {
   const trimmedName = String(name || "").trim();
   return trimmedName ? trimmedName.charAt(0).toUpperCase() : "U";
+}
+
+function isValidEmailAddress(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || "").trim());
 }
 
 function slugify(label) {

@@ -1,4 +1,4 @@
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 from app.schemas.validators import validate_trimmed_text
 
@@ -15,7 +15,25 @@ class ProductBase(BaseModel):
 
 
 class ProductCreate(ProductBase):
-    pass
+    @model_validator(mode="before")
+    @classmethod
+    def validate_required_fields(cls, value: object) -> object:
+        if not isinstance(value, dict):
+            return value
+
+        raw_product_type = value.get("product_type")
+        if raw_product_type is None or (isinstance(raw_product_type, str) and not raw_product_type.strip()):
+            raise ValueError("Product type is required.")
+
+        raw_quantity = value.get("quantity")
+        if raw_quantity is None or (isinstance(raw_quantity, str) and not raw_quantity.strip()):
+            raise ValueError("Quantity is required.")
+
+        raw_price = value.get("price")
+        if raw_price is None or (isinstance(raw_price, str) and not raw_price.strip()):
+            raise ValueError("Price is required.")
+
+        return value
 
 
 class ProductRead(ProductBase):

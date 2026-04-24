@@ -38,7 +38,7 @@ const translations = {
       fruits: {
         fig: "Թուզ",
         peach: "Դեղձ",
-        nectarine: "Նեկտարին",
+        nectarine: "Նեկտար",
       },
       cards: {
         fig: [
@@ -52,7 +52,7 @@ const translations = {
           { title: "Մեծածախ մատակարարում", description: "Կայուն ծավալներ և անխափան մատակարարում ներքին շուկայի խոշոր առևտրային ցանցերի, ինչպես նաև հյութերի և չրերի արտադրողների համար։" },
         ],
         nectarine: [
-          { title: "Նեկտարին", description: "Հարթ, պինդ, փայլուն և վառ գունավորմամբ նեկտարիններ: Առանձնանում են իրենց կատարյալ  տեսքով և խրթխրթան միջուկով:" },
+          { title: "Նեկտար", description: "Հարթ, պինդ, փայլուն և վառ գունավորմամբ նեկտարներ: Առանձնանում են իրենց կատարյալ  տեսքով և խրթխրթան միջուկով:" },
           { title: "Արտահանում", description: "Բարձր փոխադրելիություն և երկար պահպանման ժամկետ, ինչը դարձնում է այն արտահանման համար ամենահուսալի և շահավետ պրոդուկտներից մեկը:" },
           { title: "Մեծածախ մատակարարում", description: "Գերազանց ընտրություն սուպերմարկետների և HoReCa ոլորտի համար, որտեղ վիզուալ գրավչությունը և թարմությունը առաջնային են։" },
         ],
@@ -576,6 +576,7 @@ const dashboardTranslations = {
     sections: {
       transactions: "Գործարքներ",
       finances: "Ֆինանսներ",
+      partners: "Գործընկերներ",
       products: "Ապրանքներ",
       harvestStorage: "Բերք և պահեստ",
       tourism: "Տուրիզմ",
@@ -637,6 +638,7 @@ const dashboardTranslations = {
     cards: {
       transactions: "Գործարքներ",
       finances: "Ֆինանսներ",
+      partners: "Գործընկերներ",
       products: "Ապրանքներ",
       tourism: "Տուրիզմ",
     },
@@ -645,6 +647,7 @@ const dashboardTranslations = {
     },
     columns: {
       name: "Անուն",
+      email: "Էլ-հասցե",
       phone: "Հեռախոս",
       visitDate: "Այցի ամսաթիվ",
       productId: "Ապրանքի ID",
@@ -670,18 +673,21 @@ const dashboardTranslations = {
     empty: {
       transactions: "Գործարքներ դեռ չկան։",
       finances: "Ֆինանսական տվյալներ դեռ չկան։",
+      partners: "Գործընկերներ դեռ չկան։",
       products: "Ապրանքներ դեռ չկան։",
       tourism: "Ամրագրված այցելություններ դեռ չկան։",
     },
     loading: {
       transactions: "Գործարքները բեռնվում են...",
       finances: "Ֆինանսական տվյալները բեռնվում են...",
+      partners: "Գործընկերները բեռնվում են...",
       products: "Ապրանքները բեռնվում են...",
       tourism: "Ամրագրված այցելությունները բեռնվում են...",
     },
     errors: {
       transactions: "Չհաջողվեց բեռնել գործարքները։",
       finances: "Չհաջողվեց բեռնել ֆինանսական տվյալները։",
+      partners: "Չհաջողվեց բեռնել գործընկերներին։",
       products: "Չհաջողվեց բեռնել ապրանքները։",
       tourism: "Չհաջողվեց բեռնել ամրագրված այցելությունները։",
       createTransaction: "Չհաջողվեց ստեղծել գործարքը։",
@@ -705,6 +711,7 @@ const dashboardTranslations = {
     sections: {
       transactions: "Transactions",
       finances: "Finances",
+      partners: "Partners",
       products: "Products",
       harvestStorage: "Harvest & storage",
       tourism: "Tourism",
@@ -766,6 +773,7 @@ const dashboardTranslations = {
     cards: {
       transactions: "Transactions",
       finances: "Finances",
+      partners: "Partners",
       products: "Products",
       tourism: "Tourism",
     },
@@ -774,6 +782,7 @@ const dashboardTranslations = {
     },
     columns: {
       name: "Name",
+      email: "Email",
       phone: "Phone",
       visitDate: "Visit date",
       productId: "Product ID",
@@ -799,18 +808,21 @@ const dashboardTranslations = {
     empty: {
       transactions: "No transactions yet.",
       finances: "No finance records yet.",
+      partners: "No partners yet.",
       products: "No products yet.",
       tourism: "No tourism bookings yet.",
     },
     loading: {
       transactions: "Loading transactions...",
       finances: "Loading finances...",
+      partners: "Loading partners...",
       products: "Loading products...",
       tourism: "Loading tourism bookings...",
     },
     errors: {
       transactions: "Could not load transactions.",
       finances: "Could not load finances.",
+      partners: "Could not load partners.",
       products: "Could not load products.",
       tourism: "Could not load tourism bookings.",
       createTransaction: "Could not create the transaction.",
@@ -834,6 +846,7 @@ const dashboardTranslations = {
     sections: {
       transactions: "Транзакции",
       finances: "Финансы",
+      partners: "Партнеры",
       products: "Продукты",
       harvestStorage: "Урожай и склад",
       tourism: "Туризм",
@@ -895,6 +908,7 @@ const dashboardTranslations = {
     cards: {
       transactions: "Транзакции",
       finances: "Финансы",
+      partners: "Партнеры",
       products: "Продукты",
       tourism: "Туризм",
     },
@@ -903,6 +917,7 @@ const dashboardTranslations = {
     },
     columns: {
       name: "Имя",
+      email: "Эл. почта",
       phone: "Телефон",
       visitDate: "Дата визита",
       productId: "ID продукта",
@@ -928,18 +943,21 @@ const dashboardTranslations = {
     empty: {
       transactions: "Транзакций пока нет.",
       finances: "Финансовых данных пока нет.",
+      partners: "Партнеров пока нет.",
       products: "Продуктов пока нет.",
       tourism: "Бронирований пока нет.",
     },
     loading: {
       transactions: "Загрузка транзакций...",
       finances: "Загрузка финансовых данных...",
+      partners: "Загрузка партнеров...",
       products: "Загрузка продуктов...",
       tourism: "Загрузка бронирований...",
     },
     errors: {
       transactions: "Не удалось загрузить транзакции.",
       finances: "Не удалось загрузить финансовые данные.",
+      partners: "Не удалось загрузить партнеров.",
       products: "Не удалось загрузить продукты.",
       tourism: "Не удалось загрузить бронирования.",
       createTransaction: "Не удалось создать транзакцию.",
@@ -1190,6 +1208,7 @@ const whyChooseCards = [
 const dashboardIcons = {
   transactions: "/assets/icons/dashboard_icons/material-symbols_content-copy-outline.svg",
   finances: "/assets/icons/dashboard_icons/material-symbols_money-bag-outline-rounded.svg",
+  adminPartners: "/assets/icons/dashboard_icons/mdi_partnership-outline.svg",
   settings: "/assets/icons/dashboard_icons/solar_settings-outline.svg",
   logout: "/assets/icons/dashboard_icons/Icons-2.svg",
   search: "/assets/icons/dashboard_icons/Icons-3.svg",
@@ -2947,6 +2966,7 @@ function UserDashboardPage({ currentLanguage, onLanguageSelect }) {
 
       {isCreateTransactionOpen ? (
         <DashboardCreateTransactionModal
+          currentLanguage={currentLanguage}
           dashboardText={dashboardText}
           form={createTransactionForm}
           productOptionsState={productOptionsState}
@@ -3277,6 +3297,7 @@ function DashboardTransactionsSection({
 }
 
 function DashboardCreateTransactionModal({
+  currentLanguage,
   dashboardText,
   form,
   productOptionsState,
@@ -3288,6 +3309,9 @@ function DashboardCreateTransactionModal({
 }) {
   const isSubmitDisabled =
     isSubmitting || productOptionsState.isLoading || productOptionsState.data.length === 0;
+  const selectedProduct = productOptionsState.data.find(
+    (product) => String(product.product_id) === String(form.productId),
+  );
 
   return (
     <div
@@ -3322,10 +3346,15 @@ function DashboardCreateTransactionModal({
                 <option value="">{dashboardText.modal.productPlaceholder}</option>
                 {productOptionsState.data.map((product) => (
                   <option key={product.product_id} value={product.product_id}>
-                    {product.product_type}
+                    {`${product.product_type} — ${formatDashboardNumber(product.price, currentLanguage)} դր/կգ`}
                   </option>
                 ))}
               </select>
+              {selectedProduct ? (
+                <p className="dashboard-modal__helper">
+                  {`${dashboardText.columns.price}: ${formatDashboardNumber(selectedProduct.price, currentLanguage)} դր/կգ`}
+                </p>
+              ) : null}
             </div>
 
             <div className="modal-section">
@@ -3632,6 +3661,11 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
     isLoading: false,
     error: "",
   });
+  const [partnersState, setPartnersState] = React.useState({
+    data: null,
+    isLoading: false,
+    error: "",
+  });
   const [transactionActionError, setTransactionActionError] = React.useState("");
   const [productActionError, setProductActionError] = React.useState("");
   const [bookingActionError, setBookingActionError] = React.useState("");
@@ -3934,6 +3968,71 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
     adminFinancesState.data,
     dashboardText.errors.finances,
     navigate,
+    tokenType,
+    userRole,
+  ]);
+
+  React.useEffect(() => {
+    if (!accessToken || userRole !== "admin" || activeSection !== "partners" || partnersState.data !== null) {
+      return undefined;
+    }
+
+    const controller = new AbortController();
+
+    setPartnersState((current) => ({
+      data: current.data,
+      isLoading: true,
+      error: "",
+    }));
+
+    fetchAuthenticatedJson("/greencore/admin/partners", authenticatedSession, controller.signal)
+      .then((payload) => {
+        if (controller.signal.aborted) {
+          return;
+        }
+
+        setProfile((current) => ({
+          name: payload?.admin_name || current.name || "",
+          email: payload?.admin_email || current.email || "",
+        }));
+        setPartnersState({
+          data: Array.isArray(payload?.partners) ? payload.partners : [],
+          isLoading: false,
+          error: "",
+        });
+      })
+      .catch((error) => {
+        if (controller.signal.aborted || error?.name === "AbortError") {
+          return;
+        }
+
+        if (error.status === 401) {
+          clearStoredAuthSession();
+          navigate("/login", { replace: true });
+          return;
+        }
+
+        if (error.status === 403) {
+          navigate("/dashboard/transactions", { replace: true });
+          return;
+        }
+
+        setPartnersState({
+          data: [],
+          isLoading: false,
+          error: resolveDashboardError(error, currentLanguage, dashboardText.errors.partners),
+        });
+      });
+
+    return () => {
+      controller.abort();
+    };
+  }, [
+    accessToken,
+    activeSection,
+    dashboardText.errors.partners,
+    navigate,
+    partnersState.data,
     tokenType,
     userRole,
   ]);
@@ -4266,6 +4365,14 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
         state={adminFinancesState}
       />
     );
+  } else if (activeSection === "partners") {
+    content = (
+      <AdminDashboardPartnersSection
+        dashboardText={dashboardText}
+        searchValue={searchValue}
+        state={partnersState}
+      />
+    );
   }
 
   const displayName = profile.name || "";
@@ -4309,6 +4416,14 @@ function AdminDashboardPage({ currentLanguage, onLanguageSelect }) {
           >
             <img src={dashboardIcons.finances} alt="" aria-hidden="true" />
             <span>{dashboardText.sections.finances}</span>
+          </Link>
+
+          <Link
+            className={`dashboard-sidebar__item ${activeSection === "partners" ? "is-active" : ""}`}
+            to="/dashboard/admin/partners"
+          >
+            <img src={dashboardIcons.adminPartners} alt="" aria-hidden="true" />
+            <span>{dashboardText.sections.partners}</span>
           </Link>
 
           <div className="dashboard-sidebar__settings" ref={settingsRef}>
@@ -5572,6 +5687,97 @@ function AdminDashboardTourismSection({
   );
 }
 
+function AdminDashboardPartnersSection({ dashboardText, searchValue, state }) {
+  const partners = Array.isArray(state.data) ? state.data : [];
+  const normalizedSearchValue = searchValue.trim().toLocaleLowerCase();
+  const visiblePartners = React.useMemo(
+    () =>
+      partners.filter((partner, index) => {
+        if (!normalizedSearchValue) {
+          return true;
+        }
+
+        const searchableValues = [
+          String(index + 1),
+          partner.name,
+          partner.email,
+          partner.company_name,
+          partner.phone,
+        ];
+
+        return searchableValues.some((value) =>
+          String(value || "").toLocaleLowerCase().includes(normalizedSearchValue),
+        );
+      }),
+    [normalizedSearchValue, partners],
+  );
+
+  return (
+    <section className="dashboard-card">
+      <div className="dashboard-card__header">
+        <h1 className="dashboard-card__title">{dashboardText.cards.partners}</h1>
+      </div>
+
+      <div className="dashboard-table-wrap">
+        <table className="dashboard-table dashboard-table--admin-partners">
+          <thead>
+            <tr>
+              <th className="dashboard-table__index-column" />
+              <th>{dashboardText.columns.name}</th>
+              <th>{dashboardText.columns.email}</th>
+              <th>{dashboardText.columns.companyName}</th>
+              <th>{dashboardText.columns.phone}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {state.isLoading ? (
+              <tr>
+                <td className="dashboard-table__message" colSpan="5">
+                  {dashboardText.loading.partners}
+                </td>
+              </tr>
+            ) : null}
+
+            {!state.isLoading && state.error ? (
+              <tr>
+                <td className="dashboard-table__message dashboard-table__message--error" colSpan="5">
+                  {state.error}
+                </td>
+              </tr>
+            ) : null}
+
+            {!state.isLoading && !state.error && visiblePartners.length === 0 ? (
+              <tr>
+                <td className="dashboard-table__message" colSpan="5">
+                  {dashboardText.empty.partners}
+                </td>
+              </tr>
+            ) : null}
+
+            {!state.isLoading && !state.error
+              ? visiblePartners.map((partner, index) => (
+                  <tr key={partner.id}>
+                    <td className="dashboard-table__index-cell">{index + 1}</td>
+                    <td className="dashboard-table__text-cell dashboard-table__text-cell--multiline" title={partner.name}>
+                      {partner.name}
+                    </td>
+                    <td className="dashboard-table__text-cell dashboard-table__text-cell--multiline" title={partner.email}>
+                      {partner.email}
+                    </td>
+                    <td className="dashboard-table__text-cell dashboard-table__text-cell--multiline" title={partner.company_name}>
+                      {partner.company_name}
+                    </td>
+                    <td>{partner.phone}</td>
+                  </tr>
+                ))
+              : null}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
+
 function AdminDashboardFinancesSection({ currentLanguage, dashboardText, searchValue, state }) {
   const summaries = Array.isArray(state.data) ? state.data : [];
   const overallTotals = React.useMemo(
@@ -6057,6 +6263,10 @@ function getAdminDashboardSection(pathname) {
 
   if (normalizedPath === "/dashboard/admin/finances") {
     return "finances";
+  }
+
+  if (normalizedPath === "/dashboard/admin/partners") {
+    return "partners";
   }
 
   if (normalizedPath === "/dashboard/admin") {

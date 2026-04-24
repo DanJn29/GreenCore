@@ -85,3 +85,19 @@ class UserRead(UserBase):
 
 class UserResponse(UserRead):
     pass
+
+
+class AdminPartnerRead(BaseModel):
+    id: int
+    name: str
+    email: str
+    phone: str
+    company_name: str
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class AdminPartnerListResponse(BaseModel):
+    admin_name: str
+    admin_email: str
+    partners: list[AdminPartnerRead]

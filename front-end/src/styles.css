@@ -2489,6 +2489,11 @@ button {
   table-layout: fixed;
 }
 
+.dashboard-table--admin-partners {
+  min-width: 900px;
+  table-layout: fixed;
+}
+
 .dashboard-table--admin-transactions th,
 .dashboard-table--admin-transactions td,
 .dashboard-table--admin-products th,
@@ -2496,7 +2501,9 @@ button {
 .dashboard-table--admin-tourism th,
 .dashboard-table--admin-tourism td,
 .dashboard-table--admin-finances th,
-.dashboard-table--admin-finances td {
+.dashboard-table--admin-finances td,
+.dashboard-table--admin-partners th,
+.dashboard-table--admin-partners td {
   padding: 12px 10px;
   font-size: 13px;
 }

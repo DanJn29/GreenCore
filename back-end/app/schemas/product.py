@@ -45,6 +45,7 @@ class ProductRead(ProductBase):
 class UserProductRead(BaseModel):
     product_id: int
     product_type: str
+    price: float
 
     model_config = ConfigDict(from_attributes=True)
 

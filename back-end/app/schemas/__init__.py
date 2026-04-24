@@ -22,7 +22,15 @@ from app.schemas.product import (
     ProductRead,
 )
 from app.schemas.transaction import TransactionBase, TransactionCreate, TransactionRead
-from app.schemas.user import UserBase, UserCreate, UserRead, UserResponse, UserUpdate
+from app.schemas.user import (
+    AdminPartnerListResponse,
+    AdminPartnerRead,
+    UserBase,
+    UserCreate,
+    UserRead,
+    UserResponse,
+    UserUpdate,
+)
 
 __all__ = [
     "BookedUserBase",
@@ -47,6 +55,8 @@ __all__ = [
     "TransactionBase",
     "TransactionCreate",
     "TransactionRead",
+    "AdminPartnerListResponse",
+    "AdminPartnerRead",
     "UserBase",
     "UserCreate",
     "UserRead",
